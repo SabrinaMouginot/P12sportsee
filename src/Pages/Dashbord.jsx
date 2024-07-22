@@ -1,17 +1,12 @@
-
+import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 
 
 function Dashbord() {
     return (
         <div className="App">
-            <div className="Header">
-                <ul>
-                    <li>Accueil</li>
-                    <li>Profil</li>
-                    <li>Réglage</li>
-                    <li>Communauté</li>
-                </ul>
-            </div>
+            <Header/>
+            <Footer/>
         </div>
     );
 }

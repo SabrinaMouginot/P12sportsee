@@ -1,9 +1,5 @@
+@import '../sass/mixin.scss';
+
 .Footer {
-    background-color: black;
-    color: white;
-    ul {
-        list-style-type: none;
-        padding-left: 0;
-        margin: 0; 
-    }
+    @include style-header-footer;
 }

@@ -29,6 +29,11 @@
             flex: 1;
             justify-content: space-between;
             height: 24px;
+
+            a {
+                text-decoration: none;
+                color: #fff;
+            }
         }
     }
 }

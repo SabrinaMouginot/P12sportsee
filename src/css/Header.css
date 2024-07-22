@@ -1,5 +1,11 @@
 .Header {
   background-color: black;
+  color: white;
+}
+.Header ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
 }
 
 /*# sourceMappingURL=Header.css.map */

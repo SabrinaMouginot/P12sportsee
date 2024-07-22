@@ -1,4 +1,5 @@
 @import '../sass/mixins.scss';
+@import '../sass/variables.scss';
 
 .Header {
     @include style-header-footer;
@@ -8,7 +9,6 @@
 
     .Navbar {
         display: flex;
-        // flex-direction: row;
         justify-content: space-between;
         align-items: center;
         width: 100%;
@@ -29,7 +29,6 @@
             flex: 1;
             justify-content: space-between;
             height: 24px;
-
         }
     }
 }

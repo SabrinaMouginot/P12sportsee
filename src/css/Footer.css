@@ -1,5 +1,11 @@
 .Footer {
   background-color: black;
+  color: white;
+}
+.Footer ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
 }
 
 /*# sourceMappingURL=Footer.css.map */

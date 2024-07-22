@@ -11,8 +11,8 @@ function Footer() {
                 <li><img src={swim} alt="image d'un nageur" /></li>
                 <li><img src={bike} alt="image d'un coureur-cycliste" /></li>
                 <li><img src={bodybuilding} alt="image d'un haltère" /></li>
-                <li>Copyright, SportSee 2024</li>
             </ul>
+            Copyright, SportSee 2024
         </div>
     );
 }

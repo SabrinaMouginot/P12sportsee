@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../sass/Footer.scss","../sass/mixins.scss"],"names":[],"mappings":";AAEA;ECDI;EACA;EDEA;EACA;EACA;EACA;EACA;EACA;;ACLA;EACI;EACA;EACA;;ADIJ;EACI;EACA;EACA;EACA;EACA;EACA;;AAGJ;EACI;EACA;EACA;EACA;EACA","file":"Footer.css"}
+{"version":3,"sourceRoot":"","sources":["../sass/Footer.scss","../sass/mixins.scss"],"names":[],"mappings":";AAEA;ECDI;EACA;EDEA;EACA;EACA;EAEA;EACA;EACA;EACA;;ACPA;EACI;EACA;EACA;;ADMJ;EACI;EACA;EACA;EACA;EACA;EACA;;AAIJ;EACI;EACA;EACA;EACA;EACA;EACA;EACA;EACA","file":"Footer.css"}

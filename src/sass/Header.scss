@@ -2,4 +2,12 @@
 
 .Header {
     @include style-header-footer;
+
+    display: flex;
+    flex-direction: row;
+
+    ul {
+        display: flex;
+        flex-direction: row; 
+    }
 }

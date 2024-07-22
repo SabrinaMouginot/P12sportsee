@@ -1,11 +1,17 @@
 .Header {
   background-color: black;
   color: white;
+  display: flex;
+  flex-direction: row;
 }
 .Header ul {
   list-style-type: none;
-  padding-left: 0;
+  padding: 0;
   margin: 0;
+}
+.Header ul {
+  display: flex;
+  flex-direction: row;
 }
 
 /*# sourceMappingURL=Header.css.map */

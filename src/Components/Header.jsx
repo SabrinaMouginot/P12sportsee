@@ -10,7 +10,7 @@ function Header() {
                     <img src={logo} alt="logo SportSee" />
                     <img src={sportsee} alt="SportSee" />
                 </div>
-                <ul>
+                <ul className='NavItems'>
                     <li>Accueil</li>
                     <li>Profil</li>
                     <li>Réglage</li>

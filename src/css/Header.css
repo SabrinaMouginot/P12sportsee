@@ -11,18 +11,24 @@
 }
 .Header .Navbar {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  padding: 0px 50px 0px 20px;
 }
 .Header .Navbar .Logo {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  margin-right: 150px;
+  padding: 10px;
+  gap: 10px;
 }
-.Header .Navbar ul {
+.Header .Navbar .NavItems {
   display: flex;
-  flex-direction: row;
+  flex: 1;
+  justify-content: space-between;
+  height: 24px;
 }
 
 /*# sourceMappingURL=Header.css.map */

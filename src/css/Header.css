@@ -9,7 +9,18 @@
   padding: 0;
   margin: 0;
 }
-.Header ul {
+.Header .Navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.Header .Navbar .Logo {
+  display: flex;
+  align-items: center;
+}
+.Header .Navbar ul {
   display: flex;
   flex-direction: row;
 }

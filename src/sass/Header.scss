@@ -1,3 +1,32 @@
+// @import '../sass/mixin.scss';
+
+// .Header {
+//     @include style-header-footer;
+
+//     display: flex;
+//     flex-direction: row;
+
+
+//     .Navbar {
+
+//         display: flex;
+//         flex-direction: row;
+//         justify-content: space-between;
+
+//         .Logo {
+//             display: flex;
+//             align-items: center;
+//         }
+
+//         ul {
+//             display: flex;
+//             flex-direction: row;
+//             align-items: center;
+//         }
+
+//     }
+// }
+
 @import '../sass/mixin.scss';
 
 .Header {
@@ -6,8 +35,25 @@
     display: flex;
     flex-direction: row;
 
-    ul {
+    .Navbar {
         display: flex;
-        flex-direction: row; 
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        .Logo {
+            display: flex;
+            align-items: center;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: row;
+        }
+
+        // li {
+        //     margin-left: 20px;
+        // }
     }
 }

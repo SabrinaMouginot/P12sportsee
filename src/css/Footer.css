@@ -4,11 +4,21 @@
   color: white;
   width: 117px;
   height: 1024px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centrer verticalement */
+  align-items: center; /* Centrer horizontalement */
 }
 .Footer ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+.Footer .Sport {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrer les images horizontalement */
+  gap: 20px;
 }
 .Footer p {
   transform: rotate(-180deg); /* Pivoter le texte de 90 degrés dans le sens anti-horaire */

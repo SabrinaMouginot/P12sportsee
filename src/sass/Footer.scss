@@ -3,6 +3,11 @@
 .Footer {
     @include style-header-footer;
     width: 117px;
-    width: 117px;
     height: 1024px;
+
+
+    p {
+        transform: rotate(-180deg); /* Pivoter le texte de 90 degrés dans le sens anti-horaire */
+        writing-mode: vertical-rl; /* Mode d'écriture vertical (facultatif, peut aider à l'alignement) */
+    }
 }

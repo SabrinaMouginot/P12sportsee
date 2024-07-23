@@ -6,8 +6,13 @@ import '../css/Dashbord.css';
 function Dashbord() {
     return (
         <div className="App">
-            <Header/>
-            <Footer/>
+            <Header />
+            <Footer />
+            <div className="container">
+                <h1>Bonjour Thomas</h1>
+                <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+            </div>
+
         </div>
     );
 }

@@ -15,7 +15,12 @@ function Dashbord() {
 
                 <div className="grid-container">
                     <div className="activity">Activité quotidienne</div>
-                    <div className="nutiments">Nutriments</div>
+                    <div className="nutiments">
+                        <div className="calories">Calories</div>
+                        <div className="proteines">Protéines</div>
+                        <div className="glucides">Glucides</div>
+                        <div className="lipides">Lipides</div>
+                    </div>
                     <div className="bottom-row">
                         <div className="item duree">Durée moyenne des sessions</div>
                         <div className="item perf">Performance</div>
@@ -29,3 +34,4 @@ function Dashbord() {
 }
 
 export default Dashbord;
+

@@ -46,14 +46,13 @@
 
             .activity {
                 grid-area: activity;
-                background-color: #f0f0f0;
-                padding: 20px;
+                background-color: #FBFBFB;
+                // background-color: #f0f0f0;
             }
 
             .nutiments {
                 grid-area: nutiments;
-                background-color: #d0d0d0;
-                padding: 20px;
+                background-color: #FBFBFB;
             }
 
             .bottom-row {
@@ -66,8 +65,28 @@
 
             .item {
                 background-color: #b0b0b0;
-                padding: 20px;
                 text-align: center;
+            }
+
+            .duree {
+                background-color: #FF0000;
+                color: white;
+            }
+
+            .perf {
+                background-color: #282D30;
+                color: white;
+            }
+
+            .score {
+                background-color: #FBFBFB;
+            }
+
+            .activity, .nutiments, .item {
+                border-radius: 5px;
+                padding: 20px;
+                font-size: 15px;
+                box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02)
             }
         }
     }

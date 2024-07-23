@@ -17,9 +17,9 @@ function Dashbord() {
                     <div className="activity">Activité quotidienne</div>
                     <div className="nutiments">Nutriments</div>
                     <div className="bottom-row">
-                        <div className="item">Durée moyenne des sessions</div>
-                        <div className="item">Performance</div>
-                        <div className="item">Score</div>
+                        <div className="item duree">Durée moyenne des sessions</div>
+                        <div className="item perf">Performance</div>
+                        <div className="item score">Score</div>
                     </div>
                 </div>
             </div>

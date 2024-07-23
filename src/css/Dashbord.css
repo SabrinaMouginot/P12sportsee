@@ -2,9 +2,9 @@
 .App {
   display: grid;
   grid-template-columns: 117px 1fr;
-  /* 117px pour le footer, le reste pour le contenu */
+  /* 117px pour la colonne de gauche (Footer), 1fr pour le reste du contenu */
   grid-template-rows: auto 1fr;
-  /* Auto pour le header, le reste pour le contenu */
+  /* Auto pour le header, 1fr pour le contenu restant */
   height: 100vh;
   /* Prendre toute la hauteur de la vue */
 }
@@ -33,10 +33,10 @@
   display: grid;
   grid-template-columns: 3fr 1fr;
   /* 75% pour la colonne principale, 25% pour la sidebar */
-  grid-template-rows: auto auto;
-  /* Deux lignes : une pour le contenu principal et la sidebar, une pour la ligne du bas */
-  grid-template-areas: "activity nutiments" "bottom-row bottom-row";
-  /* Les divs de la ligne du bas occupent toute la largeur de la ligne du bas */
+  grid-template-rows: auto 1fr;
+  /* Deux lignes : une pour le contenu principal, une pour les éléments de la ligne du bas */
+  grid-template-areas: "activity nutiments" "bottom-row nutiments";
+  /* Définir les zones de grille */
   gap: 10px;
 }
 .App .container .grid-container .activity {
@@ -47,12 +47,13 @@
 .App .container .grid-container .nutiments {
   grid-area: nutiments;
   background-color: #d0d0d0;
+  padding: 20px;
 }
 .App .container .grid-container .bottom-row {
   grid-area: bottom-row;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* Trois colonnes égales */
+  /* Trois colonnes égales pour la ligne du bas */
   gap: 10px;
 }
 .App .container .grid-container .item {

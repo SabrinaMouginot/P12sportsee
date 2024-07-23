@@ -9,8 +9,19 @@ function Dashbord() {
             <Header />
             <Footer />
             <div className="container">
-                <h1>Bonjour Thomas</h1>
+                <h1>Bonjour <span className="prenom">Thomas</span></h1>
                 <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+
+
+                <div className="grid-container">
+                    <div className="activity">Activité quotidienne</div>
+                    <div className="nutiments">Nutriments</div>
+                    <div className="bottom-row">
+                        <div className="item">Durée moyenne des sessions</div>
+                        <div className="item">Performance</div>
+                        <div className="item">Score</div>
+                    </div>
+                </div>
             </div>
 
         </div>

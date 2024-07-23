@@ -1,11 +1,15 @@
 .App {
     display: grid;
-    grid-template-columns: 117px 1fr; /* 117px pour le footer, le reste pour le contenu */
-    grid-template-rows: auto 1fr; /* Auto pour le header, le reste pour le contenu */
-    height: 100vh; /* Prendre toute la hauteur de la vue */
+    grid-template-columns: 117px 1fr;
+    /* 117px pour le footer, le reste pour le contenu */
+    grid-template-rows: auto 1fr;
+    /* Auto pour le header, le reste pour le contenu */
+    height: 100vh;
+    /* Prendre toute la hauteur de la vue */
 
     .Header {
-        grid-column: 1 / -1; /* Prendre toute la largeur */
+        grid-column: 1 / -1;
+        /* Prendre toute la largeur */
         grid-row: 1;
     }
 
@@ -22,6 +26,58 @@
 
         h1 {
             margin: 0;
+
+            .prenom {
+                color: #FF0101;
+            }
         }
+
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            /* 75% pour la colonne principale, 25% pour la sidebar */
+            grid-template-rows: auto auto;
+            /* Deux lignes : une pour le contenu principal et la sidebar, une pour la ligne du bas */
+            grid-template-areas:
+                "activity nutiments"
+                "bottom-row bottom-row";
+            /* Les divs de la ligne du bas occupent toute la largeur de la ligne du bas */
+            gap: 10px;
+            /* Espace entre les éléments, ajustez selon vos besoins */
+
+            .activity {
+                grid-area: activity;
+                background-color: #f0f0f0;
+                /* Couleur de fond pour la div principale */
+                padding: 20px;
+                /* Espacement interne */
+            }
+
+            .nutiments {
+                grid-area: nutiments;
+                background-color: #d0d0d0;
+            }
+
+            .bottom-row {
+                grid-area: bottom-row;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                /* Trois colonnes égales */
+                gap: 10px;
+                /* Espace entre les éléments */
+            }
+
+            .item {
+                background-color: #b0b0b0;
+                /* Couleur de fond pour les items de la ligne du bas */
+                padding: 20px;
+                /* Espacement interne */
+                text-align: center;
+                /* Centrer le texte */
+            }
+        }
+
     }
+
 }

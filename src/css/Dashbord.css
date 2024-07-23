@@ -1,3 +1,9 @@
-
+.App .container {
+  padding: 20px;
+  width: 400px;
+}
+.App .container h1, .App .container p {
+  width: 400px;
+}
 
 /*# sourceMappingURL=Dashbord.css.map */

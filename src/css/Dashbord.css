@@ -15,7 +15,11 @@
 .App .container {
   grid-column: 2;
   grid-row: 2;
-  padding: 20px;
+  margin-top: 40px;
+  margin-left: 60px;
+}
+.App .container h1 {
+  margin: 0;
 }
 
 /*# sourceMappingURL=Dashbord.css.map */

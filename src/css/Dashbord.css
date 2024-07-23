@@ -41,11 +41,27 @@
 }
 .App .container .grid-container .activity {
   grid-area: activity;
-  background-color: #FBFBFB;
+  background-color: #f0f0f0;
+  padding: 20px;
 }
 .App .container .grid-container .nutiments {
   grid-area: nutiments;
-  background-color: #FBFBFB;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  /* Diviser en quatre lignes égales */
+  gap: 10px;
+}
+.App .container .grid-container .nutiments .calories {
+  background-color: #f0f0f0;
+}
+.App .container .grid-container .nutiments .proteines {
+  background-color: #f0f0f0;
+}
+.App .container .grid-container .nutiments .glucides {
+  background-color: #f0f0f0;
+}
+.App .container .grid-container .nutiments .lipides {
+  background-color: #f0f0f0;
 }
 .App .container .grid-container .bottom-row {
   grid-area: bottom-row;
@@ -71,7 +87,6 @@
 }
 .App .container .grid-container .activity, .App .container .grid-container .nutiments, .App .container .grid-container .item {
   border-radius: 5px;
-  padding: 20px;
   font-size: 15px;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
 }

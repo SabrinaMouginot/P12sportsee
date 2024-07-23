@@ -1,9 +1,21 @@
-.App .container {
-  padding: 20px;
-  width: 400px;
+.App {
+  display: grid;
+  grid-template-columns: 117px 1fr; /* 117px pour le footer, le reste pour le contenu */
+  grid-template-rows: auto 1fr; /* Auto pour le header, le reste pour le contenu */
+  height: 100vh; /* Prendre toute la hauteur de la vue */
 }
-.App .container h1, .App .container p {
-  width: 400px;
+.App .Header {
+  grid-column: 1/-1; /* Prendre toute la largeur */
+  grid-row: 1;
+}
+.App .Footer {
+  grid-column: 1;
+  grid-row: 2;
+}
+.App .container {
+  grid-column: 2;
+  grid-row: 2;
+  padding: 20px;
 }
 
 /*# sourceMappingURL=Dashbord.css.map */

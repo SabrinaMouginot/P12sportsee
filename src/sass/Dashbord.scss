@@ -1,10 +1,22 @@
 .App {
+    display: grid;
+    grid-template-columns: 117px 1fr; /* 117px pour le footer, le reste pour le contenu */
+    grid-template-rows: auto 1fr; /* Auto pour le header, le reste pour le contenu */
+    height: 100vh; /* Prendre toute la hauteur de la vue */
+
+    .Header {
+        grid-column: 1 / -1; /* Prendre toute la largeur */
+        grid-row: 1;
+    }
+
+    .Footer {
+        grid-column: 1;
+        grid-row: 2;
+    }
 
     .container {
+        grid-column: 2;
+        grid-row: 2;
         padding: 20px;
-        width: 400px;
-        h1, p {
-        width: 400px;
-    }
     }
 }

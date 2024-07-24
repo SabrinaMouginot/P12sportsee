@@ -1,7 +1,7 @@
-import bodybuilding from '../assets/bodybuilding.svg';
-import bike from '../assets/bike.svg';
-import swim from '../assets/swim.svg';
-import yoga from '../assets/yoga.svg';
+import bodybuilding from '../assets/footer/bodybuilding.svg';
+import bike from '../assets/footer/bike.svg';
+import swim from '../assets/footer/swim.svg';
+import yoga from '../assets/footer/yoga.svg';
 import '../css/Footer.css';
 
 function Footer() {

@@ -1,8 +1,8 @@
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import Calories from "../Components/NutrimentsCards/Calories";
+import Glucides from "../Components/NutrimentsCards/Glucides";
 import '../css/Dashbord.css';
-
 
 function Dashbord() {
     return (
@@ -18,9 +18,8 @@ function Dashbord() {
                     <div className="activity">Activité quotidienne</div>
                     <div className="nutiments">
                         <Calories/>
-
                         <div className="proteines">Protéines</div>
-                        <div className="glucides">Glucides</div>
+                        <Glucides/>
                         <div className="lipides">Lipides</div>
                     </div>
                     <div className="bottom-row">

@@ -1,5 +1,6 @@
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
+import Calories from "../Components/NutrimentsCards/Calories";
 import '../css/Dashbord.css';
 
 
@@ -16,7 +17,8 @@ function Dashbord() {
                 <div className="grid-container">
                     <div className="activity">Activité quotidienne</div>
                     <div className="nutiments">
-                        <div className="calories">Calories</div>
+                        <Calories/>
+
                         <div className="proteines">Protéines</div>
                         <div className="glucides">Glucides</div>
                         <div className="lipides">Lipides</div>

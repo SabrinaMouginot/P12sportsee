@@ -1,4 +1,4 @@
-import '../../css/sessions';
+import '../../css/SessionMoyenne.css';
 
 function Duree () {
     return (

@@ -3,4 +3,5 @@
 .calories {
     background-color: #FBFBFB;
     @include style-box-charts;
+    @include style-nutriments;
 }

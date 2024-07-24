@@ -4,8 +4,9 @@
   font-size: 15px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
+}
+.proteines img {
+  margin: 32px;
 }
 
 /*# sourceMappingURL=Proteines.css.map */

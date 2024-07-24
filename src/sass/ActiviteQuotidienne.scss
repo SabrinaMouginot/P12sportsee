@@ -4,6 +4,9 @@
     grid-area: activity;
     background-color: #FBFBFB;
     padding: 20px;
-    font-weight: bold;
     @include style-box-charts;
+
+    .title {
+        font-weight: bold;
+    }
 }

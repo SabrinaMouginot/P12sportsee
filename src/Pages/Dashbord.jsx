@@ -2,6 +2,7 @@ import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import Calories from "../Components/NutrimentsCards/Calories";
 import Glucides from "../Components/NutrimentsCards/Glucides";
+import Lipides from "../Components/NutrimentsCards/Lipides";
 import '../css/Dashbord.css';
 
 function Dashbord() {
@@ -20,7 +21,7 @@ function Dashbord() {
                         <Calories/>
                         <div className="proteines">Protéines</div>
                         <Glucides/>
-                        <div className="lipides">Lipides</div>
+                        <Lipides/>
                     </div>
                     <div className="bottom-row">
                         <div className="item duree">Durée moyenne des sessions</div>

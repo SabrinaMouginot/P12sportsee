@@ -51,18 +51,6 @@
   /* Diviser en quatre lignes égales */
   gap: 10px;
 }
-.App .container .grid-container .nutiments .calories {
-  background-color: #f0f0f0;
-}
-.App .container .grid-container .nutiments .proteines {
-  background-color: #f0f0f0;
-}
-.App .container .grid-container .nutiments .glucides {
-  background-color: #f0f0f0;
-}
-.App .container .grid-container .nutiments .lipides {
-  background-color: #f0f0f0;
-}
 .App .container .grid-container .bottom-row {
   grid-area: bottom-row;
   display: grid;

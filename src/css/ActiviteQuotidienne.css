@@ -2,6 +2,7 @@
   grid-area: activity;
   background-color: #FBFBFB;
   padding: 20px;
+  font-weight: bold;
   border-radius: 5px;
   font-size: 15px;
 }

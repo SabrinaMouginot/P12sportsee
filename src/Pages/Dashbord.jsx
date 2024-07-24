@@ -1,6 +1,7 @@
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import ActiviteQuotidienne from "../Components/Charts/ActiviteQuotidienne";
+import Performance from "../Components/Charts/Performance";
 import Calories from "../Components/NutrimentsCards/Calories";
 import Glucides from "../Components/NutrimentsCards/Glucides";
 import Lipides from "../Components/NutrimentsCards/Lipides";
@@ -26,7 +27,7 @@ function Dashbord() {
                     </div>
                     <div className="bottom-row">
                         <div className="item duree">Durée moyenne des sessions</div>
-                        <div className="item perf">Performance</div>
+                        <Performance/>
                         <div className="item score">Score</div>
                     </div>
                 </div>

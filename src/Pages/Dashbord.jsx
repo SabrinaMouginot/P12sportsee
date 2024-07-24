@@ -1,10 +1,12 @@
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
+import ActiviteQuotidienne from "../Components/Charts/ActiviteQuotidienne";
 import Calories from "../Components/NutrimentsCards/Calories";
 import Glucides from "../Components/NutrimentsCards/Glucides";
 import Lipides from "../Components/NutrimentsCards/Lipides";
-import '../css/Dashbord.css';
 import Proteines from "../Components/NutrimentsCards/Proteines";
+import '../css/Dashbord.css';
+
 
 function Dashbord() {
     return (
@@ -14,10 +16,8 @@ function Dashbord() {
             <div className="container">
                 <h1>Bonjour <span className="prenom">Thomas</span></h1>
                 <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
-
-
                 <div className="grid-container">
-                    <div className="activity">Activité quotidienne</div>
+                    <ActiviteQuotidienne/>
                     <div className="nutiments">
                         <Calories/>
                         <Proteines/>

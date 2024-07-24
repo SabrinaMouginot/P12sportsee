@@ -4,6 +4,7 @@ import Calories from "../Components/NutrimentsCards/Calories";
 import Glucides from "../Components/NutrimentsCards/Glucides";
 import Lipides from "../Components/NutrimentsCards/Lipides";
 import '../css/Dashbord.css';
+import Proteines from "../Components/NutrimentsCards/Proteines";
 
 function Dashbord() {
     return (
@@ -19,7 +20,7 @@ function Dashbord() {
                     <div className="activity">Activité quotidienne</div>
                     <div className="nutiments">
                         <Calories/>
-                        <div className="proteines">Protéines</div>
+                        <Proteines/>
                         <Glucides/>
                         <Lipides/>
                     </div>

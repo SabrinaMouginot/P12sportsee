@@ -1,9 +1,9 @@
 import '../../css/Score.css';
 
-function Score () {
+function Score() {
     return (
         <div className="item score">Score</div>
     );
 }
 
-export default Score ;
+export default Score;

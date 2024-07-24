@@ -20,17 +20,17 @@ function Dashbord() {
                 <h1>Bonjour <span className="prenom">Thomas</span></h1>
                 <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
                 <div className="grid-container">
-                    <ActiviteQuotidienne/>
+                    <ActiviteQuotidienne />
                     <div className="nutiments">
-                        <Calories/>
-                        <Proteines/>
-                        <Glucides/>
-                        <Lipides/>
+                        <Calories />
+                        <Proteines />
+                        <Glucides />
+                        <Lipides />
                     </div>
                     <div className="bottom-row">
-                        <Duree/>
-                        <Performance/>
-                        <Score/>
+                        <Duree />
+                        <Performance />
+                        <Score />
                     </div>
                 </div>
             </div>

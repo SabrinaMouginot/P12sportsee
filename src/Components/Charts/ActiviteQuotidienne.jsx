@@ -1,6 +1,6 @@
 import '../../css/ActiviteQuotidienne.css';
 
-function ActiviteQuotidienne () {
+function ActiviteQuotidienne() {
     return (
         <div className="activity">Activité quotidienne</div>
     );

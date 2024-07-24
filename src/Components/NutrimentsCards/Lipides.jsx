@@ -1,6 +1,6 @@
 import '../../css/Lipides.css'
 
-function Lipides () {
+function Lipides() {
     return (
         <div className="lipides">Lipides</div>
     );

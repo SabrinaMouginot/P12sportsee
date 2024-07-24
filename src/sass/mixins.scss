@@ -8,3 +8,8 @@
         margin: 0; 
     }
 }
+
+@mixin style-box-charts {
+    border-radius: 5px;
+    font-size: 15px;
+}

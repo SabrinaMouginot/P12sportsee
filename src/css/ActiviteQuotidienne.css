@@ -2,6 +2,8 @@
   grid-area: activity;
   background-color: #FBFBFB;
   padding: 20px;
+  border-radius: 5px;
+  font-size: 15px;
 }
 
 /*# sourceMappingURL=ActiviteQuotidienne.css.map */

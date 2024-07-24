@@ -1,5 +1,8 @@
+@import '../sass/mixins.scss';
+
 .activity {
     grid-area: activity;
     background-color: #FBFBFB;
     padding: 20px;
+    @include style-box-charts;
 }

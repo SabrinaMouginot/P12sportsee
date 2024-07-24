@@ -1,5 +1,7 @@
+@import '../sass/mixins.scss';
 
 .perf {
     background-color: #282D30;
     color: white;
+    @include style-box-charts;
 }

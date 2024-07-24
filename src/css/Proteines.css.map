@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../sass/Proteines.scss"],"names":[],"mappings":"AAAA;EACI","file":"Proteines.css"}
+{"version":3,"sourceRoot":"","sources":["../sass/Proteines.scss","../sass/mixins.scss"],"names":[],"mappings":"AAEA;EACI;ECSA;EACA","file":"Proteines.css"}

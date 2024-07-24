@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../sass/Glucides.scss"],"names":[],"mappings":"AAAA;EACI","file":"Glucides.css"}
+{"version":3,"sourceRoot":"","sources":["../sass/Glucides.scss","../sass/mixins.scss"],"names":[],"mappings":"AAEA;EACI;ECSA;EACA","file":"Glucides.css"}

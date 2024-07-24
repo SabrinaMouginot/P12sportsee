@@ -12,8 +12,13 @@
 @mixin style-box-charts {
     border-radius: 5px;
     font-size: 15px;
+}
+
+@mixin style-nutriments {
     display: flex;
     align-items: center;
-    justify-content:center;
-    gap: 10px;
+
+    img {
+        margin: 32px;
+    }
 }

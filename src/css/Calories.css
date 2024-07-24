@@ -8,5 +8,16 @@
 .calories img {
   margin: 32px;
 }
+.calories .text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.calories p {
+  margin: 0;
+}
+.calories .valeurs {
+  font-weight: bold;
+}
 
 /*# sourceMappingURL=Calories.css.map */

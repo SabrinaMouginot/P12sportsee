@@ -6,7 +6,7 @@ function Calories() {
         <div className="calories">
             <img src={calories} alt="représentation des calories" />
             <div className="text-container">
-                <p>1,930kCal</p>
+                <p className='valeurs'>1,930kCal</p>
                 <p>Calories</p>
             </div>
         </div>

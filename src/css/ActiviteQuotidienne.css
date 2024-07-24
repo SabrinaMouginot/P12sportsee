@@ -1,3 +1,7 @@
-
+.activity {
+  grid-area: activity;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
 
 /*# sourceMappingURL=ActiviteQuotidienne.css.map */

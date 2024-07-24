@@ -39,11 +39,6 @@
   /* Définir les zones de grille */
   gap: 10px;
 }
-.App .container .grid-container .activity {
-  grid-area: activity;
-  background-color: #f0f0f0;
-  padding: 20px;
-}
 .App .container .grid-container .nutiments {
   grid-area: nutiments;
   display: grid;

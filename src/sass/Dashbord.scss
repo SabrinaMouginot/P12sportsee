@@ -44,12 +44,6 @@
             /* Définir les zones de grille */
             gap: 10px;
 
-            .activity {
-                grid-area: activity;
-                background-color: #f0f0f0;
-                padding: 20px;
-            }
-
             .nutiments {
                 grid-area: nutiments;
                 display: grid;

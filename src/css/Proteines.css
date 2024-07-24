@@ -8,5 +8,16 @@
 .proteines img {
   margin: 32px;
 }
+.proteines .text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.proteines p {
+  margin: 0;
+}
+.proteines .valeurs {
+  font-weight: bold;
+}
 
 /*# sourceMappingURL=Proteines.css.map */

@@ -5,7 +5,10 @@ function Glucides() {
     return (
         <div className="glucides">
             <img src={glucides} alt="représentation des glucides" />
-            <p>Glucides</p>
+            <div className="text-container">
+                <p className='valeurs'>290g</p>
+                <p>Glucides</p>
+            </div>
         </div>
     );
 }

@@ -8,5 +8,16 @@
 .glucides img {
   margin: 32px;
 }
+.glucides .text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.glucides p {
+  margin: 0;
+}
+.glucides .valeurs {
+  font-weight: bold;
+}
 
 /*# sourceMappingURL=Glucides.css.map */

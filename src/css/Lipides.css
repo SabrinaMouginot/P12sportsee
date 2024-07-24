@@ -8,5 +8,16 @@
 .lipides img {
   margin: 32px;
 }
+.lipides .text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.lipides p {
+  margin: 0;
+}
+.lipides .valeurs {
+  font-weight: bold;
+}
 
 /*# sourceMappingURL=Lipides.css.map */

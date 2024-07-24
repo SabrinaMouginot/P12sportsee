@@ -5,7 +5,10 @@ function Proteines() {
     return (
         <div className="proteines">
             <img src={proteines} alt="représentation des protéines" />
-            <p>Protéines</p>
+            <div className="text-container">
+                <p className='valeurs'>155g</p>
+                <p>Protéines</p>
+            </div>
         </div>
     );
 }

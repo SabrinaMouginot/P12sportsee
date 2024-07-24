@@ -5,7 +5,10 @@ function Lipides() {
     return (
         <div className="lipides">
             <img src={lipides} alt="représentation des lipides" />
-            <p>Lipides</p>
+            <div className="text-container">
+                <p className='valeurs'>50g</p>
+                <p>Lipides</p>
+            </div>
         </div>
     );
 }

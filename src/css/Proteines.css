@@ -2,6 +2,10 @@
   background-color: #FBFBFB;
   border-radius: 5px;
   font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 /*# sourceMappingURL=Proteines.css.map */

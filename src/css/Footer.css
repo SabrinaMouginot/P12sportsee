@@ -3,12 +3,13 @@
   background-color: #020203;
   color: white;
   width: 117px;
+  max-height: 850px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex: 0 0 117px;
   /* Footer prend 117px en hauteur */
+  padding: 60px;
 }
 .Footer ul {
   list-style-type: none;
@@ -29,7 +30,7 @@
   writing-mode: vertical-rl;
   /* Mode d'écriture vertical */
   text-align: center;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 500;
 }
 

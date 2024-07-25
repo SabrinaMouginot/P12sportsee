@@ -4,12 +4,14 @@
 .Footer {
     @include style-header-footer;
     width: 117px;
+    max-height: 850px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex: 0 0 117px;
+    // flex: 0 0 117px;
     /* Footer prend 117px en hauteur */
+    padding: 60px;
 
     .Sport {
         display: flex;
@@ -28,8 +30,7 @@
         /* Mode d'écriture vertical */
         // margin-top: auto;
         text-align: center;
-        font-size: 12px;
+        font-size: 10px;
         font-weight: 500;
-        // padding: 50px;
     }
 }

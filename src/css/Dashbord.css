@@ -54,5 +54,10 @@
   /* Trois colonnes égales pour la ligne du bas */
   gap: 10px;
 }
+.App .container .grid-container .bottom-row .item {
+  aspect-ratio: 258/263;
+  /* Respecter le ratio largeur/hauteur */
+  height: auto;
+}
 
 /*# sourceMappingURL=Dashbord.css.map */

@@ -37,6 +37,7 @@
             grid-template-columns: 3fr 1fr;
             /* 75% pour la colonne principale, 25% pour la sidebar */
             grid-template-rows: auto 1fr;
+            // grid-template-rows: auto 1fr;
             /* Deux lignes : une pour le contenu principal, une pour les éléments de la ligne du bas */
             grid-template-areas:
                 "activity nutiments"
@@ -59,6 +60,12 @@
                 grid-template-columns: repeat(3, 1fr);
                 /* Trois colonnes égales pour la ligne du bas */
                 gap: 10px;
+
+                .item {
+                    aspect-ratio: 258 / 263;
+                    /* Respecter le ratio largeur/hauteur */
+                    height: auto;
+                }
             }
         }
     }

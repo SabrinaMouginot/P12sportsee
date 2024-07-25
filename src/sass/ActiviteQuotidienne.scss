@@ -6,6 +6,10 @@
     padding: 20px;
     @include style-box-charts;
 
+    aspect-ratio: 835 / 320;
+    /* Respecter le ratio largeur/hauteur */
+    height: auto;
+
     .legend {
         display: flex;
         align-items: center;

@@ -4,6 +4,9 @@
   padding: 20px;
   border-radius: 5px;
   font-size: 15px;
+  aspect-ratio: 835/320;
+  /* Respecter le ratio largeur/hauteur */
+  height: auto;
 }
 .activity .legend {
   display: flex;

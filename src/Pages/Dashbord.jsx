@@ -17,8 +17,10 @@ function Dashbord() {
             <Header />
             <Footer />
             <div className="container">
+                <div className="txtContainer">
                 <h1>Bonjour <span className="prenom">Thomas</span></h1>
                 <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+                </div>
                 <div className="grid-container">
                     <ActiviteQuotidienne />
                     <div className="nutiments">

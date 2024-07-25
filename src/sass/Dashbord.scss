@@ -21,14 +21,17 @@
     .container {
         grid-column: 2;
         grid-row: 2;
-        margin-top: 40px;
-        margin-left: 60px;
+        margin: 40px 40px 40px 80px;
 
-        h1 {
-            margin: 0;
+        .txtContainer {
+            margin-bottom: 40px;
 
-            .prenom {
-                color: #FF0101;
+            h1 {
+                margin: 0;
+
+                .prenom {
+                    color: #FF0101;
+                }
             }
         }
 
@@ -43,21 +46,20 @@
                 "activity nutiments"
                 "bottom-row nutiments";
             /* Définir les zones de grille */
-            gap: 10px;
+            gap: 30px;
 
             .nutiments {
                 grid-area: nutiments;
                 display: grid;
                 grid-template-rows: repeat(4, 1fr);
                 /* Diviser en quatre lignes égales */
-                gap: 10px;
-                margin-right: 40px;
+                gap: 30px;
             }
 
             .bottom-row {
                 grid-area: bottom-row;
                 display: flex;
-                gap: 10px;
+                gap: 30px;
 
                 .item {
                     flex: 1;

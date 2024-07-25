@@ -20,7 +20,7 @@
 .App .container {
   grid-column: 2;
   grid-row: 2;
-  margin: 40px 40px 40px 80px;
+  margin: 40px 60px 60px 80px;
 }
 .App .container .txtContainer {
   margin-bottom: 40px;

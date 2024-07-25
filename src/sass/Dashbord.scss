@@ -56,12 +56,11 @@
 
             .bottom-row {
                 grid-area: bottom-row;
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                /* Trois colonnes égales pour la ligne du bas */
+                display: flex;
                 gap: 10px;
 
                 .item {
+                    flex: 1;
                     aspect-ratio: 258 / 263;
                     /* Respecter le ratio largeur/hauteur */
                     height: auto;

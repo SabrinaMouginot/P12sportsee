@@ -6,7 +6,29 @@
     padding: 20px;
     @include style-box-charts;
 
-    .title {
-        font-weight: bold;
+    .legend {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .title {
+            font-weight: bold;
+            margin-right: auto;
+        }
+
+        .right-items {
+            display: flex;
+            gap: 20px;
+
+            p {
+                display: flex;
+                align-items: center;
+                margin: 0;
+
+                img {
+                    margin-right: 8px;
+                }
+            }
+        }
     }
 }

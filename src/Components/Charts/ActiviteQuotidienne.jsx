@@ -5,9 +5,13 @@ import OvalRed from '../../assets/OvalRed.svg';
 function ActiviteQuotidienne() {
     return (
         <div className="activity">
-            <p className='title'>Activité quotidienne</p>
-            <p><img src= {Oval} alt="pastille bleu" /> Poids (kg)</p>
-            <p><img src= {OvalRed} alt="pastille bleu" /> Calories brûlées (kCal)</p>
+            <div className="legend">
+                <p className='title'>Activité quotidienne</p>
+                <div className="right-items">
+                    <p><img src={Oval} alt="pastille bleu" /> Poids (kg)</p>
+                    <p><img src={OvalRed} alt="pastille bleu" /> Calories brûlées (kCal)</p>
+                </div>
+            </div>
         </div>
     );
 }

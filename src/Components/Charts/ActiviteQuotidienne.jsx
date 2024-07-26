@@ -1,6 +1,7 @@
 import '../../css/ActiviteQuotidienne.css';
 import Oval from '../../assets/Oval.svg';
 import OvalRed from '../../assets/OvalRed.svg';
+import ActivityBarChart from './charts/ActivityBarCharts';
 
 function ActiviteQuotidienne() {
     return (
@@ -12,6 +13,7 @@ function ActiviteQuotidienne() {
                     <p><img src={OvalRed} alt="pastille bleu" /> Calories brûlées (kCal)</p>
                 </div>
             </div>
+            <ActivityBarChart/>
         </div>
     );
 }

@@ -1,0 +1,20 @@
+.App {
+    display: grid;
+    grid-template-columns: 117px 1fr;
+    /* 117px pour la colonne de gauche (Footer), 1fr pour le reste du contenu */
+    grid-template-rows: auto 1fr;
+    /* Auto pour le header, 1fr pour le contenu restant */
+    height: 100vh;
+    /* Prendre toute la hauteur de la vue */
+
+    .Header {
+        grid-column: 1 / -1;
+        /* Prendre toute la largeur */
+        grid-row: 1;
+    }
+
+    .Footer {
+        grid-column: 1;
+        grid-row: 2;
+    }
+}

@@ -1,14 +1,16 @@
-import { Bar, BarChart, CartesianGrid, Tooltip, XAxis } from "recharts";
+import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis } from "recharts";
 
 function ActivityBarChart() {
     return (
-        <BarChart>
-            <CartesianGrid/>
-            <XAxis/>
-            <Tooltip/>
-            <Bar/>
-            <Bar/>
-        </BarChart>
+        <ResponsiveContainer>
+            <BarChart>
+                <CartesianGrid />
+                <XAxis />
+                <Tooltip />
+                <Bar />
+                <Bar />
+            </BarChart>
+        </ResponsiveContainer>
     )
 }
 

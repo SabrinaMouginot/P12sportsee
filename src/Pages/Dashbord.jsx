@@ -1,5 +1,3 @@
-import Header from "../Components/Header";
-import Footer from "../Components/Footer";
 import ActiviteQuotidienne from "../Components/Charts/ActiviteQuotidienne";
 import Performance from "../Components/Charts/Performance";
 import Duree from "../Components/Charts/SessionMoyenne";
@@ -13,9 +11,7 @@ import '../css/Dashbord.css';
 
 function Dashbord() {
     return (
-        <div className="App">
-            <Header />
-            <Footer />
+        <div className="dashbord">
             <div className="container">
                 <div className="txtContainer">
                 <h1>Bonjour <span className="prenom">Thomas</span></h1>
@@ -42,4 +38,3 @@ function Dashbord() {
 }
 
 export default Dashbord;
-

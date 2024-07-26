@@ -9,12 +9,12 @@ function App() {
     <Router>
       <div className="App">
         <Header />
-        <div className="content">
+        {/* <div className="content"> */}
           <Routes>
             <Route path="/" element={<Dashbord />} />
             {/* Ajouter d'autres routes ici si nécessaire */}
           </Routes>
-        </div>
+        {/* </div> */}
         <Footer />
       </div>
     </Router>

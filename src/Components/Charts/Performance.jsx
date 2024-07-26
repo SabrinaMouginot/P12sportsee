@@ -2,7 +2,9 @@ import '../../css/Performance.css';
 
 function Performance() {
     return (
-        <div className="item perf">Performance</div>
+        <div className="item perf">
+            Performance
+        </div>
     );
 }
 

@@ -8,7 +8,6 @@ import Lipides from "../Components/NutrimentsCards/Lipides";
 import Proteines from "../Components/NutrimentsCards/Proteines";
 import '../css/Dashbord.css';
 
-
 function Dashbord() {
     return (
         <div className="dashbord">

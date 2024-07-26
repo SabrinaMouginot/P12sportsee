@@ -1,0 +1,24 @@
+.nutriment {
+  background-color: #FBFBFB;
+  border-radius: 5px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+}
+.nutriment img {
+  margin: 32px;
+}
+.nutriment .text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.nutriment p {
+  margin: 0;
+}
+.nutriment .valeurs {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/*# sourceMappingURL=Nutriment.css.map */

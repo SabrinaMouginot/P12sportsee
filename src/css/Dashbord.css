@@ -1,37 +1,19 @@
 @charset "UTF-8";
-.App {
-  display: grid;
-  grid-template-columns: 117px 1fr;
-  /* 117px pour la colonne de gauche (Footer), 1fr pour le reste du contenu */
-  grid-template-rows: auto 1fr;
-  /* Auto pour le header, 1fr pour le contenu restant */
-  height: 100vh;
-  /* Prendre toute la hauteur de la vue */
-}
-.App .Header {
-  grid-column: 1/-1;
-  /* Prendre toute la largeur */
-  grid-row: 1;
-}
-.App .Footer {
-  grid-column: 1;
-  grid-row: 2;
-}
-.App .container {
+.dashbord .container {
   grid-column: 2;
   grid-row: 2;
   margin: 40px 60px 60px 80px;
 }
-.App .container .txtContainer {
+.dashbord .container .txtContainer {
   margin-bottom: 40px;
 }
-.App .container .txtContainer h1 {
+.dashbord .container .txtContainer h1 {
   margin: 0;
 }
-.App .container .txtContainer h1 .prenom {
+.dashbord .container .txtContainer h1 .prenom {
   color: #FF0101;
 }
-.App .container .grid-container {
+.dashbord .container .grid-container {
   display: grid;
   grid-template-columns: 3fr 1fr;
   /* 75% pour la colonne principale, 25% pour la sidebar */
@@ -41,19 +23,19 @@
   /* Définir les zones de grille */
   gap: 30px;
 }
-.App .container .grid-container .nutiments {
+.dashbord .container .grid-container .nutiments {
   grid-area: nutiments;
   display: grid;
   grid-template-rows: repeat(4, 1fr);
   /* Diviser en quatre lignes égales */
   gap: 30px;
 }
-.App .container .grid-container .bottom-row {
+.dashbord .container .grid-container .bottom-row {
   grid-area: bottom-row;
   display: flex;
   gap: 30px;
 }
-.App .container .grid-container .bottom-row .item {
+.dashbord .container .grid-container .bottom-row .item {
   flex: 1;
   aspect-ratio: 258/263;
   /* Respecter le ratio largeur/hauteur */

@@ -1,4 +1,6 @@
 import '../../css/Nutriment.css'
+import PropTypes from 'prop-types';
+
 
 function Nutriment({ icon, value, label }) {
     return (
@@ -11,5 +13,11 @@ function Nutriment({ icon, value, label }) {
         </div>
     );
 }
+
+Nutriment.propTypes = {
+    icon: PropTypes.string.isRequired,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    label: PropTypes.string.isRequired,
+};
 
 export default Nutriment;

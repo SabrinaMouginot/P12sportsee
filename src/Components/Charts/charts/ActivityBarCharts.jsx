@@ -1,3 +1,5 @@
+import { BarChart } from "recharts";
+
 function ActivityBarChart() {
     return (
         <BarChart>

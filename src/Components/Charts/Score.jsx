@@ -3,7 +3,9 @@ import '../../css/Score.css';
 function Score() {
     return (
         <div className="item score">
-            Score
+            <p>
+                Score
+            </p>
         </div>
     );
 }

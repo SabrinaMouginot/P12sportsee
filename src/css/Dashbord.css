@@ -41,5 +41,8 @@
   /* Respecter le ratio largeur/hauteur */
   height: auto;
 }
+.dashbord .container .grid-container .bottom-row .item p {
+  margin: 0;
+}
 
 /*# sourceMappingURL=Dashbord.css.map */

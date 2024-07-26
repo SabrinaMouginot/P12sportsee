@@ -2,7 +2,7 @@ import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis } fro
 
 function ActivityBarChart() {
     return (
-        <ResponsiveContainer>
+        <ResponsiveContainer width="100%">
             <BarChart>
                 <CartesianGrid />
                 <XAxis />

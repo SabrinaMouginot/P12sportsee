@@ -42,7 +42,7 @@ function Dashbord() {
                     <div className="grid-container">
                         <ActivityBarChart userId={userId} />
                         <div className="nutiments">
-                            <Nutriment icon={caloriesIcon} value="1,930kCal" label="Calories" />
+                            <Nutriment icon={caloriesIcon} value={`${data.keyData.calorieCount}kcal`} label="Calories" />
                             <Nutriment icon={proteinesIcon} value="155g" label="Protéines" />
                             <Nutriment icon={glucidesIcon} value="290g" label="Glucides" />
                             <Nutriment icon={lipidesIcon} value="50g" label="Lipides" />

@@ -16,6 +16,20 @@ function Dashbord() {
     const { userId } = useParams();
     console.log(userId);
 
+    const [data, setData] = useState();
+
+    useEffect(() => {
+        axios.get(`http://localhost:3000/user/${userId}`) //changer 12 : c'est l'ID
+            .then(response => {
+                setData(response.data.data);
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    }, []);
+
+    if (!data) {
+        return <p>Chargement...</p>
+    } else {
+
 
         return (
             <div className="dashbord">
@@ -43,5 +57,6 @@ function Dashbord() {
             </div>
         );
     }
+}
 
 export default Dashbord;

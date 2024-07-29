@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import { BarChart, Bar, XAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 function ActivityBarChart({userId}) {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/user/${userId}/activity`) //changer 12 : c'est l'ID
+        axios.get(`http://localhost:3000/user/${userId}/activity`)
         .then(response => {
             setData(response.data.data.sessions);
         })
@@ -25,5 +26,9 @@ function ActivityBarChart({userId}) {
         </ResponsiveContainer>
     );
 }
+
+ActivityBarChart.propTypes = {
+    userId: PropTypes.string.isRequired,
+};
 
 export default ActivityBarChart;

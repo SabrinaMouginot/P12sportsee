@@ -13,6 +13,8 @@ import { useEffect, useState } from 'react';
 import '../css/Dashbord.css';
 
 function Dashbord() {
+    const { userId } = useParams();
+    console.log(userId);
 
 
         return (
@@ -41,6 +43,5 @@ function Dashbord() {
             </div>
         );
     }
-
 
 export default Dashbord;

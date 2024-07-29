@@ -11,7 +11,7 @@ function App() {
         <Header />
         {/* <div className="content"> */}
           <Routes>
-            <Route path="/" element={<Dashbord />} />
+            <Route path="/:userId" element={<Dashbord />} />
             {/* Ajouter d'autres routes ici si nécessaire */}
           </Routes>
         {/* </div> */}

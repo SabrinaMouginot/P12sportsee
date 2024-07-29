@@ -1,0 +1,31 @@
+.notfound-msg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 139px;
+  padding: 139px;
+  color: rgb(255, 96, 96);
+}
+.notfound-msg .notfound-title {
+  font-size: 288px;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 768.1px) {
+  .notfound-msg {
+    gap: 113px;
+    padding: 113px 0;
+  }
+  .notfound-msg .notfound-title {
+    height: 99px;
+    font-size: 96px;
+  }
+  .notfound-msg p {
+    text-align: center; /* Centrer le texte pour une meilleure apparence */
+    margin: 0;
+  }
+}
+
+/*# sourceMappingURL=NotFound.css.map */

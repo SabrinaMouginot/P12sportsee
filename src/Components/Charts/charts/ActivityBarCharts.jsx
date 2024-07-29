@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 import { BarChart, Bar, XAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import axios from 'axios';
 
-function ActivityBarChart() {
+function ActivityBarChart({userId}) {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/user/12/activity')
+        axios.get(`http://localhost:3000/user/${userId}/activity`) //changer 12 : c'est l'ID
         .then(response => {
             setData(response.data.data.sessions);
         })

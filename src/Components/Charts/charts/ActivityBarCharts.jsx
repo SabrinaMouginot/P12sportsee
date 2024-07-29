@@ -16,7 +16,7 @@ function ActivityBarChart() {
     return (
         <ResponsiveContainer width="100%" height={300}>
             <BarChart data={data}>
-                <CartesianGrid vertical={false} stroke='#DEDEDE' />
+                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke='#DEDEDE' />
                 <XAxis dataKey="day" />
                 <Tooltip />
                 <Bar dataKey="kilogram" fill="#282D30" name="Poids (kg)" />

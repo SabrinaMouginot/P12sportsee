@@ -45,7 +45,7 @@ function Dashbord() {
                             <Nutriment icon={caloriesIcon} value={`${data.keyData.calorieCount}kcal`} label="Calories" />
                             <Nutriment icon={proteinesIcon} value={`${data.keyData.proteinCount}g`} label="Protéines" />
                             <Nutriment icon={glucidesIcon} value={`${data.keyData.carbohydrateCount}g`} label="Glucides" />
-                            <Nutriment icon={lipidesIcon} value="50g" label="Lipides" />
+                            <Nutriment icon={lipidesIcon} value={`${data.keyData.lipidCount}g`} label="Lipides" />
                         </div>
                         <div className="bottom-row">
                             <Duree />

@@ -5,29 +5,27 @@
     flex-direction: column;
     gap: 139px;
     padding: 139px;
-    color: rgb(255, 96, 96);
+    color: #FF0101;
 
     .notfound-title {
         font-size: 288px;
         margin: 0;
         padding: 0;
     }
-}
 
-@media (max-width: 768.1px) {
-    .notfound-msg {
-        // display: flex;
-        gap: 113px;
-        padding: 113px 0;
+    p {
+        color: black;
+    }
 
-        .notfound-title {
-            height: 99px;
-            font-size: 96px;
-        }
-
-        p {
-            text-align: center; /* Centrer le texte pour une meilleure apparence */
-            margin: 0;
-          }
+    .back-link {
+        font-size: 1rem;
+        color: #007bff;
+        text-decoration: underline;
+        cursor: pointer;
+      
+      
+      &:hover {
+        color: #0056b3;
+      }
     }
 }

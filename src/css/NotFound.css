@@ -5,27 +5,24 @@
   flex-direction: column;
   gap: 139px;
   padding: 139px;
-  color: rgb(255, 96, 96);
+  color: #FF0101;
 }
 .notfound-msg .notfound-title {
   font-size: 288px;
   margin: 0;
   padding: 0;
 }
-
-@media (max-width: 768.1px) {
-  .notfound-msg {
-    gap: 113px;
-    padding: 113px 0;
-  }
-  .notfound-msg .notfound-title {
-    height: 99px;
-    font-size: 96px;
-  }
-  .notfound-msg p {
-    text-align: center; /* Centrer le texte pour une meilleure apparence */
-    margin: 0;
-  }
+.notfound-msg p {
+  color: black;
+}
+.notfound-msg .back-link {
+  font-size: 1rem;
+  color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.notfound-msg .back-link:hover {
+  color: #0056b3;
 }
 
 /*# sourceMappingURL=NotFound.css.map */

@@ -1,3 +1,4 @@
+import NotFound from "./NotFound";
 import ActivityBarChart from "../Components/Charts/charts/ActivityBarCharts";
 import Performance from "../Components/Charts/Performance";
 import Duree from "../Components/Charts/SessionMoyenne";
@@ -27,7 +28,7 @@ function Dashbord() {
     }, [userId]); //Ajout de userId comme dépendance
 
     if (!data) {
-        return <p>Chargement...</p>
+        return <NotFound/>
     } else {
 
 

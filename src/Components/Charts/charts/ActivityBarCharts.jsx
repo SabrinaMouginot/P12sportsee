@@ -11,7 +11,7 @@ function ActivityBarChart({userId}) {
             setData(response.data.data.sessions);
         })
             .catch(error => console.error('Error fetching data:', error));
-    }, []);
+    }, [userId]);
 
     return (
         <ResponsiveContainer width="100%" height={300}>

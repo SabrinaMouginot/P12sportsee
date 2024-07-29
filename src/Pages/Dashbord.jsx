@@ -19,12 +19,12 @@ function Dashbord() {
     const [data, setData] = useState();
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/user/${userId}`) //changer 12 : c'est l'ID
+        axios.get(`http://localhost:3000/user/${userId}`)
             .then(response => {
                 setData(response.data.data);
             })
             .catch(error => console.error('Error fetching data:', error));
-    }, []);
+    }, [userId]); //Ajout de userId comme dépendance
 
     if (!data) {
         return <p>Chargement...</p>

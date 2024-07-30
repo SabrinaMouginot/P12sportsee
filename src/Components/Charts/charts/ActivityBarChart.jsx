@@ -16,6 +16,7 @@ function ActivityBarChart({userId}) {
 
     return (
         <ResponsiveContainer width="100%" height={300}>
+            <h2 className='title'>Activité quotidienne</h2>
             <BarChart data={data}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke='#DEDEDE' />
                 <XAxis dataKey="day" />

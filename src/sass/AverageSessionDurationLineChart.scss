@@ -1,0 +1,8 @@
+@import '../sass/mixins.scss';
+
+.duree {
+    background-color: #FF0000;
+    color: white;
+    padding: 20px;
+    @include style-box-charts;
+}

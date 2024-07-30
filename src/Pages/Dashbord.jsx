@@ -1,5 +1,5 @@
 import NotFound from "./NotFound";
-import ActivityBarChart from "../Components/Charts/charts/ActivityBarCharts";
+import ActivityBarChart from "../Components/Charts/charts/ActivityBarChart";
 import Performance from "../Components/Charts/Performance";
 import Duree from "../Components/Charts/SessionMoyenne";
 import Score from "../Components/Charts/Score";

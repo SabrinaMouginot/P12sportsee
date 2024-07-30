@@ -15,6 +15,9 @@ function AverageSessionDurationLineChart ({userId}) {
     }, [userId]);
 
     return (
+        <div className="chart-wrapper">            
+        <h2 className="title">Durée moyenne des sessions</h2>
+        
         <ResponsiveContainer width="30%" height={250}>
             <LineChart data={data}>
                 <CartesianGrid strokeDasharray={false} vertical={false} />
@@ -23,6 +26,7 @@ function AverageSessionDurationLineChart ({userId}) {
                 <Line type="monotone" dataKey="sessionLength" stroke="#FBFBFB"/>
             </LineChart>
         </ResponsiveContainer>
+        </div>
     );
 }
 

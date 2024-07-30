@@ -19,12 +19,12 @@
   /* 75% pour la colonne principale, 25% pour la sidebar */
   grid-template-rows: auto 1fr;
   /* Deux lignes : une pour le contenu principal, une pour les éléments de la ligne du bas */
-  grid-template-areas: "activity nutiments" "bottom-row nutiments";
+  grid-template-areas: "activity nutriments" "bottom-row nutriments";
   /* Définir les zones de grille */
   gap: 30px;
 }
-.dashbord .container .grid-container .nutiments {
-  grid-area: nutiments;
+.dashbord .container .grid-container .nutriments {
+  grid-area: nutriments;
   display: grid;
   grid-template-rows: repeat(4, 1fr);
   /* Diviser en quatre lignes égales */

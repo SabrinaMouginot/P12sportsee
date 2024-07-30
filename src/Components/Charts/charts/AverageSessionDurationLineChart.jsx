@@ -20,10 +20,10 @@ function AverageSessionDurationLineChart ({userId}) {
         
         <ResponsiveContainer width="100%" height={250}>
             <LineChart data={data}>
-                <CartesianGrid strokeDasharray={false} vertical={false} />
-                <XAxis dataKey="day" />
+                <CartesianGrid strokeDasharray={false} vertical={false} horizontal={false} />
+                <XAxis dataKey="day" tick={{ fill: '#FBFBFB' }} />
                 <Tooltip />
-                <Line type="monotone" dataKey="sessionLength" stroke="#FBFBFB"/>
+                <Line type="monotone" dataKey="sessionLength" stroke="#FBFBFB" strokeWidth={2}/>
             </LineChart>
         </ResponsiveContainer>
         </div>

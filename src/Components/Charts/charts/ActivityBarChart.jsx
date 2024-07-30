@@ -20,9 +20,9 @@ function ActivityBarChart({userId}) {
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke='#DEDEDE' />
                 <XAxis dataKey="day" />
                 <Tooltip />
-                <Legend iconType="circle"/>
+                <Legend iconType="circle" verticalAlign="top" align="right"/>
                 <Bar dataKey="kilogram" fill="#282D30" name="Poids (kg)" />
-                <Bar dataKey="calories" fill="#E60000" name="Calories (kCal)" />
+                <Bar dataKey="calories" fill="#E60000" name="Calories brûlées (kCal)" />
             </BarChart>
         </ResponsiveContainer>
     );

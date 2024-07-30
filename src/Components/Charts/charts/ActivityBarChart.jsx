@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { BarChart, Bar, XAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
@@ -20,6 +20,7 @@ function ActivityBarChart({userId}) {
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke='#DEDEDE' />
                 <XAxis dataKey="day" />
                 <Tooltip />
+                <Legend/>
                 <Bar dataKey="kilogram" fill="#282D30" name="Poids (kg)" />
                 <Bar dataKey="calories" fill="#E60000" name="Calories (kCal)" />
             </BarChart>

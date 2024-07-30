@@ -2,6 +2,7 @@ import { useParams } from "react-router";
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
+import '../css/Dashbord.css'
 import NotFound from "./NotFound";
 
 import Nutriment from "../Components/NutrimentsCards/Nutriment";

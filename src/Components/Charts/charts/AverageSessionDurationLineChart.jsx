@@ -18,7 +18,7 @@ function AverageSessionDurationLineChart ({userId}) {
         <div className="chart-wrapper">            
         <h2 className="title">Durée moyenne des sessions</h2>
         
-        <ResponsiveContainer width="30%" height={250}>
+        <ResponsiveContainer width="100%" height={250}>
             <LineChart data={data}>
                 <CartesianGrid strokeDasharray={false} vertical={false} />
                 <XAxis dataKey="day" />

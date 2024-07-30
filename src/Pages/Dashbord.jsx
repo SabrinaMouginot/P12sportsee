@@ -1,18 +1,22 @@
+import { useParams } from "react-router";
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+
 import NotFound from "./NotFound";
-import ActivityBarChart from "../Components/Charts/charts/ActivityBarChart";
-// import AverageSessionDurationLineChart from "../Components/Charts/charts/AverageSessionDurationLineChart";
-import Performance from "../Components/Charts/Performance";
-import Duree from "../Components/Charts/SessionMoyenne";
-import Score from "../Components/Charts/Score";
+
 import Nutriment from "../Components/NutrimentsCards/Nutriment";
 import caloriesIcon from '../assets/nutriments/calories-icon.svg';
 import glucidesIcon from '../assets/nutriments/carbs-icon.svg';
 import lipidesIcon from '../assets/nutriments/fat-icon.svg';
 import proteinesIcon from '../assets/nutriments/protein-icon.svg';
-import { useParams } from "react-router";
-import axios from 'axios';
-import { useEffect, useState } from 'react';
-import '../css/Dashbord.css';
+
+import ActivityBarChart from "../Components/Charts/charts/ActivityBarChart";
+import AverageSessionDurationLineChart from "../Components/Charts/charts/AverageSessionDurationLineChart";
+import Performance from "../Components/Charts/Performance";
+import Score from "../Components/Charts/Score";
+import '../css/ActivityBarChart.css';
+import '../css/AverageSessionDurationLineChart.css';
+
 
 function Dashbord() {
     const { userId } = useParams();
@@ -29,7 +33,7 @@ function Dashbord() {
     }, [userId]); //Ajout de userId comme dépendance
 
     if (!data) {
-        return <NotFound/>
+        return <NotFound />
     } else {
 
 
@@ -49,7 +53,9 @@ function Dashbord() {
                             <Nutriment icon={lipidesIcon} value={`${data.keyData.lipidCount}g`} label="Lipides" />
                         </div>
                         <div className="bottom-row">
-                            <Duree />
+                            <div className="item duree">
+                                <AverageSessionDurationLineChart userId={userId}/>
+                            </div>
                             <Performance />
                             <Score />
                         </div>

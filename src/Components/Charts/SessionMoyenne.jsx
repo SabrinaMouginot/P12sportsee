@@ -1,4 +1,5 @@
 import '../../css/SessionMoyenne.css';
+import AverageSessionDurationLineChart from './charts/AverageSessionDurationLineChart';
 
 function Duree() {
     return (
@@ -6,6 +7,7 @@ function Duree() {
             <p>
                 Durée moyenne des sessions
             </p>
+            <AverageSessionDurationLineChart/>
         </div>
     );
 }

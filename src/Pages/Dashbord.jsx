@@ -14,10 +14,12 @@ import proteinesIcon from '../assets/nutriments/protein-icon.svg';
 import ActivityBarChart from "../Components/Charts/charts/ActivityBarChart";
 import AverageSessionDurationLineChart from "../Components/Charts/charts/AverageSessionDurationLineChart";
 import PerformanceRadarChart from "../Components/Charts/charts/PerformanceRadarChart";
-import Score from "../Components/Charts/Score";
+import ScoreDonutChart from "../Components/Charts/charts/ScoreDonutChart";
 import '../css/ActivityBarChart.css';
 import '../css/AverageSessionDurationLineChart.css';
 import '../css/PerformanceRadarChart.css';
+import '../css/ScoreDonutChart.css';
+
 
 function Dashbord() {
     const { userId } = useParams();
@@ -58,7 +60,9 @@ function Dashbord() {
                             <div className="item perf">
                             <PerformanceRadarChart userId={userId} />
                             </div>
-                            <Score />
+                            <div className="item score">
+                            <ScoreDonutChart />
+                            </div>
                         </div>
                     </div>
                 </div>

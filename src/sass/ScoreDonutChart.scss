@@ -1,0 +1,7 @@
+@import '../sass/mixins.scss';
+
+.score {
+    background-color: #FBFBFB;
+    padding: 20px;
+    @include style-box-charts;
+}

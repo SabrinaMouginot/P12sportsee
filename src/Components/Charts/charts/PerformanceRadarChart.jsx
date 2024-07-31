@@ -15,7 +15,6 @@ function PerformanceRadarChart({ userId }) {
 
     return (
         <div className="chart-wrapper">
-            <h2 className="title">Performance</h2>
             <ResponsiveContainer width="100%" height={250}>
                 <RadarChart data={data} >
                     <PolarGrid />

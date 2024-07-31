@@ -1,0 +1,19 @@
+// .chart-wrapper {
+//     position: relative;
+//     width: 100%;
+    
+//     .title {
+//         font-size: 16px;
+//         font-weight: bold;
+//         margin-bottom: 10px;
+//     }
+// }
+
+@import '../sass/mixins.scss';
+
+.perf {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    @include style-box-charts;
+}

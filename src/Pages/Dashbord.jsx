@@ -17,6 +17,7 @@ import PerformanceRadarChart from "../Components/Charts/charts/PerformanceRadarC
 import Score from "../Components/Charts/Score";
 import '../css/ActivityBarChart.css';
 import '../css/AverageSessionDurationLineChart.css';
+import '../css/PerformanceRadarChart.css';
 
 function Dashbord() {
     const { userId } = useParams();

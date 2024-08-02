@@ -112,7 +112,7 @@ function ScoreDonutChart({ userId }) {
                         dominantBaseline="middle"
                         className="score-text"
                     >
-                        12%
+                        {`${score * 100}%`}
                         <tspan x="50%" dy="1.2em" className="score-subtext">
                             de votre objectif
                         </tspan>

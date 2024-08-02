@@ -4,20 +4,17 @@
   border-radius: 5px;
   font-size: 15px;
 }
-
-.title {
+.score .title {
   text-align: left;
   font-size: 16px;
   font-weight: 500;
 }
-
-.score-text {
+.score .score-text {
   font-size: 26px;
   font-weight: 700;
   fill: #282D30;
 }
-
-.score-subtext {
+.score .score-subtext {
   font-size: 14px;
   font-weight: 500;
   fill: #74798C;

@@ -38,7 +38,7 @@ function ActivityBarChart({ userId }) {
     };
 
     return (
-        <div className="chart-wrapper">
+        <div className="chart-wrapper activity">
             <h2 className="title">Activité quotidienne</h2>
             <ResponsiveContainer width="100%" height={250}>
                 <BarChart data={data} barGap={10} barCategoryGap={50}>

@@ -1,4 +1,4 @@
-.chart-wrapper {
+.activity {
   display: flex;
   align-items: start;
   justify-content: space-around;
@@ -9,12 +9,12 @@
   background-color: #FBFBFB;
   padding: 10px;
 }
-.chart-wrapper .title {
+.activity .title {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 10px;
 }
-.chart-wrapper .custom-tooltip {
+.activity .custom-tooltip {
   background-color: #E60000;
   color: white;
   padding: 10px;

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { PieChart, Pie, ResponsiveContainer, Cell } from 'recharts';
+import { PieChart, Pie, ResponsiveContainer } from 'recharts';
 import axios from 'axios';
 import '../../../sass/ScoreDonutChart.scss';
 
@@ -37,28 +37,18 @@ function ScoreDonutChart({ userId }) {
             <h2 className="title">Score</h2>
             <ResponsiveContainer width="100%" height={250}>
                 <PieChart>
-                    {/* Cercle de base (blanc) */}
+                    {/* Cercle blanc */}
                     <Pie
                         data={data}
                         dataKey="value"
-                        innerRadius="70%"
+                        innerRadius="0%"
                         outerRadius="80%"
                         startAngle={90}
                         endAngle={450} // Le cercle complet
                         fill="#FFFFFF"
                         stroke="none" // Retirer la bordure
                     />
-                    {/* Cercle de base (blanc) */}
-                    <Pie
-                        data={data}
-                        dataKey="value"
-                        innerRadius="0%"
-                        outerRadius="70%"
-                        startAngle={90}
-                        endAngle={450} // Le cercle complet
-                        fill="#FFFFFF"
-                        stroke="none" // Retirer la bordure
-                    />
+
                     {/* Arc de score (rouge) */}
                     <Pie
                         data={data}

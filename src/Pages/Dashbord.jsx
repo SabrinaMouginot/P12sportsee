@@ -61,7 +61,7 @@ function Dashbord() {
                             <PerformanceRadarChart userId={userId} />
                             </div>
                             <div className="item score">
-                            <ScoreDonutChart />
+                            <ScoreDonutChart userId={userId}/>
                             </div>
                         </div>
                     </div>

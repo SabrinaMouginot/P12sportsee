@@ -1,11 +1,10 @@
-
 import { useEffect, useState } from 'react';
-import { PieChart, Pie, ResponsiveContainer } from 'recharts';
+import { PieChart, Pie, ResponsiveContainer, Cell } from 'recharts';
 import axios from 'axios';
 import '../../../sass/ScoreDonutChart.scss';
 
 function ScoreDonutChart({ userId }) {
-    const [score, setScore] = useState(0); // État pour stocker le score
+    const [score, setScore] = useState(0); // Assurez-vous que la valeur initiale est 0, pas un tableau
 
     useEffect(() => {
         // Appel API pour récupérer les données utilisateur
@@ -31,21 +30,46 @@ function ScoreDonutChart({ userId }) {
         { name: 'Reste', value: 1 - score },
     ];
 
+    const scoreEndAngle = 90 + 360 * score; // Calculer l'angle de fin pour l'arc rouge
+
     return (
         <div className="chart-wrapper">
             <h2 className="title">Score</h2>
             <ResponsiveContainer width="100%" height={250}>
                 <PieChart>
+                    {/* Cercle de base (blanc) */}
                     <Pie
                         data={data}
                         dataKey="value"
                         innerRadius="70%"
                         outerRadius="80%"
                         startAngle={90}
-                        endAngle={450}
+                        endAngle={450} // Le cercle complet
+                        fill="#FFFFFF"
+                        stroke="none" // Retirer la bordure
+                    />
+                    {/* Cercle de base (blanc) */}
+                    <Pie
+                        data={data}
+                        dataKey="value"
+                        innerRadius="0%"
+                        outerRadius="70%"
+                        startAngle={90}
+                        endAngle={450} // Le cercle complet
+                        fill="#FFFFFF"
+                        stroke="none" // Retirer la bordure
+                    />
+                    {/* Arc de score (rouge) */}
+                    <Pie
+                        data={data}
+                        dataKey="value"
+                        innerRadius="70%"
+                        outerRadius="80%"
+                        startAngle={90}
+                        endAngle={scoreEndAngle}
                         fill="#FF0000"
-                    >
-                    </Pie>
+                        // Important d'utiliser `fill` ici pour la couleur
+                    />
                     <text
                         x="50%"
                         y="50%"
@@ -53,7 +77,7 @@ function ScoreDonutChart({ userId }) {
                         dominantBaseline="middle"
                         className="score-text"
                     >
-                        {`${score * 100}%`}
+                        {`${(score * 100).toFixed(0)}%`}
                         <tspan x="50%" dy="1.2em" className="score-subtext">
                             de votre objectif
                         </tspan>

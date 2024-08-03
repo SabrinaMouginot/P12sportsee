@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { PieChart, Pie, ResponsiveContainer } from 'recharts';
 import axios from 'axios';
 import '../../../sass/ScoreDonutChart.scss';
+import PropTypes from 'prop-types';
 
 function ScoreDonutChart({ userId }) {
     const [score, setScore] = useState(0); // Assurez-vous que la valeur initiale est 0, pas un tableau
@@ -77,5 +78,9 @@ function ScoreDonutChart({ userId }) {
         </div>
     );
 }
+
+ScoreDonutChart.propTypes = {
+    userId: PropTypes.string.isRequired,
+};
 
 export default ScoreDonutChart;

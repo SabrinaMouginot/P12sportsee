@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { LineChart, Line, XAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 function AverageSessionDurationLineChart ({userId}) {
     const [data, setData] = useState([]);
@@ -30,5 +31,8 @@ function AverageSessionDurationLineChart ({userId}) {
     );
 }
 
+AverageSessionDurationLineChart.propTypes = {
+    userId: PropTypes.string.isRequired,
+};
 
 export default AverageSessionDurationLineChart;

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 function PerformanceRadarChart({ userId }) {
     const [data, setData] = useState([]);
@@ -25,5 +26,9 @@ function PerformanceRadarChart({ userId }) {
         </div>
     );
 }
+
+PerformanceRadarChart.propTypes = {
+    userId: PropTypes.string.isRequired,
+};
 
 export default PerformanceRadarChart;

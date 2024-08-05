@@ -3,6 +3,29 @@ import { AreaChart, Area, XAxis, CartesianGrid, Tooltip, ResponsiveContainer } f
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
+function CustomCursor({ points, width, height }) {
+    const { x } = points[0]; // La position en x du point actif
+    return (
+        <rect
+            x={x} // Positionner le rectangle à la position du point actif
+            y={0} // Le rectangle commence en haut du graphique
+            width={width - x} // Le rectangle couvre toute la largeur à partir du point actif jusqu'au bord droit
+            height={height} // Le rectangle couvre toute la hauteur du graphique
+            fill="#000" // Couleur de fond
+            opacity={0.0975} // Opacité appliquée
+        />
+    );
+}
+
+CustomCursor.propTypes = {
+    points: PropTypes.arrayOf(PropTypes.shape({
+        x: PropTypes.number.isRequired,
+        y: PropTypes.number.isRequired,
+    })),
+    width: PropTypes.number.isRequired,
+    height: PropTypes.number.isRequired,
+};
+
 function AverageSessionDurationLineChart({ userId }) {
     const [data, setData] = useState([]);
 
@@ -27,27 +50,27 @@ function AverageSessionDurationLineChart({ userId }) {
         7: 'D', // Dimanche
     };
 
-// Tooltip personnalisé
-const CustomTooltip = ({ active, payload }) => { //payload affiche des informations sur les données survolées dans un graphique.
-    if (active && payload && payload.length) {
-        return (
-            <div className="custom-tooltip">
-                <p className="label">{`${payload[0].value} min`}</p>
-            </div>
-        );
-    }
-    return null;
-};
+    // Tooltip personnalisé
+    const CustomTooltip = ({ active, payload }) => { //payload affiche des informations sur les données survolées dans un graphique.
+        if (active && payload && payload.length) {
+            return (
+                <div className="custom-tooltip">
+                    <p className="label">{`${payload[0].value} min`}</p>
+                </div>
+            );
+        }
+        return null;
+    };
 
-// Validation des props pour CustomTooltip
-CustomTooltip.propTypes = {
-    active: PropTypes.bool,  // active est un booléen
-    payload: PropTypes.arrayOf( //la prop payload que le composant CustomTooltip attend doit être un tableau.
-        PropTypes.shape({ // shape définit la forme spécifique de l'objet
-            value: PropTypes.number.isRequired,  // payload doit être un tableau avec des objets contenant une valeur numérique
-        })
-    ),
-};
+    // Validation des props pour CustomTooltip
+    CustomTooltip.propTypes = {
+        active: PropTypes.bool,  // active est un booléen
+        payload: PropTypes.arrayOf( //la prop payload que le composant CustomTooltip attend doit être un tableau.
+            PropTypes.shape({ // shape définit la forme spécifique de l'objet
+                value: PropTypes.number.isRequired,  // payload doit être un tableau avec des objets contenant une valeur numérique
+            })
+        ),
+    };
 
     return (
         <div className="chart-wrapper duree">
@@ -65,7 +88,9 @@ CustomTooltip.propTypes = {
                         tickLine={false} // Supprime les petits traits sur l'axe des abscisses
                         axisLine={false} // Supprime la ligne de l'axe des abscisses
                     />
-                    <Tooltip content={<CustomTooltip />} />
+                    <Tooltip content={<CustomTooltip />}
+                        cursor={<CustomCursor />}
+                    />
                     <Area
                         type="monotone"
                         dataKey="sessionLength"

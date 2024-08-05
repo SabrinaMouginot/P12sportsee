@@ -1,8 +1,15 @@
 .perf {
   background-color: black;
   color: white;
-  border-radius: 5px;
-  font-size: 15px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.perf .recharts-polar-angle-axis .recharts-cartesian-axis-tick-value {
+  font-size: 12px;
 }
 
 /*# sourceMappingURL=PerformanceRadarChart.css.map */

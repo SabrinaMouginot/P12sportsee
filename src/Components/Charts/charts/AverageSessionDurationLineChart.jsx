@@ -27,17 +27,27 @@ function AverageSessionDurationLineChart({ userId }) {
         7: 'D', // Dimanche
     };
 
-    // Tooltip personnalisé
-    const CustomTooltip = ({ active, payload }) => {
-        if (active && payload && payload.length) {
-            return (
-                <div className="custom-tooltip">
-                    <p className="label">{`${payload[0].value} min`}</p>
-                </div>
-            );
-        }
-        return null;
-    };
+// Tooltip personnalisé
+const CustomTooltip = ({ active, payload }) => { //payload affiche des informations sur les données survolées dans un graphique.
+    if (active && payload && payload.length) {
+        return (
+            <div className="custom-tooltip">
+                <p className="label">{`${payload[0].value} min`}</p>
+            </div>
+        );
+    }
+    return null;
+};
+
+// Validation des props pour CustomTooltip
+CustomTooltip.propTypes = {
+    active: PropTypes.bool,  // active est un booléen
+    payload: PropTypes.arrayOf( //la prop payload que le composant CustomTooltip attend doit être un tableau.
+        PropTypes.shape({ // shape définit la forme spécifique de l'objet
+            value: PropTypes.number.isRequired,  // payload doit être un tableau avec des objets contenant une valeur numérique
+        })
+    ),
+};
 
     return (
         <div className="chart-wrapper duree">

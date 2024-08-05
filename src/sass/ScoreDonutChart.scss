@@ -2,13 +2,14 @@
 
 .score {
     background-color: #FBFBFB;
-    padding: 20px;
+    // padding: 20px;
     @include style-box-charts;
 
     .title {
         text-align: left;
         font-size: 16px;
         font-weight: 500;
+        padding: 20px;
     }
 
     .score-text {

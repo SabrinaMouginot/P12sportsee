@@ -14,12 +14,25 @@ function PerformanceRadarChart({ userId }) {
             .catch(error => console.error('Error fetching data:', error));
     }, [userId]);
 
+    // Libellés personnalisés
+    const labels = [
+        'Intensité',
+        'Vitesse',
+        'Force',
+        'Endurance',
+        'Energie',
+        'Cardio'
+    ];
+
     return (
         <div className="chart-wrapper">
             <ResponsiveContainer width="100%" height={250}>
                 <RadarChart data={data} >
                     <PolarGrid />
-                    <PolarAngleAxis/>
+                    <PolarAngleAxis
+                        tickFormatter={(index) => labels[index]} // Formater les labels
+                        tick={{ fill: '#FFFFFF' }} // Couleur des labels
+                    />
                     <Radar dataKey="value" fill="#FF0101" />
                 </RadarChart>
             </ResponsiveContainer>

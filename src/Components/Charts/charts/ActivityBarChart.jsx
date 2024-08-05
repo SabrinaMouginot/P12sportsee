@@ -1,18 +1,14 @@
 import { useEffect, useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
-import axios from 'axios';
 import PropTypes from 'prop-types';
 import '../../../sass/ActivityBarChart.scss';
+import { getUserActivities } from '../../../API/api';
 
 function ActivityBarChart({ userId }) {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/user/${userId}/activity`)
-            .then(response => {
-                setData(response.data.data.sessions);
-            })
-            .catch(error => console.error('Error fetching data:', error));
+        getUserActivities(userId).then(activitiesData => setData(activitiesData))
     }, [userId]);
 
     // Fonction pour customiser le tooltip

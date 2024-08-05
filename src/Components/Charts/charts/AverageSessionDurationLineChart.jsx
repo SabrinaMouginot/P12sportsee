@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { AreaChart, Area, XAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import axios from 'axios';
 import PropTypes from 'prop-types';
+import { getUserSessions } from '../../../API/api';
 
 function CustomCursor({ points, width, height }) {
     const { x } = points[0]; // La position en x du point actif
@@ -30,12 +30,7 @@ function AverageSessionDurationLineChart({ userId }) {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/user/${userId}/average-sessions`)
-            .then(response => {
-                console.log('API Response:', response.data);
-                setData(response.data.data.sessions);
-            })
-            .catch(error => console.error('Error fetching data:', error));
+        getUserSessions(userId).then(userData => setData(userData))
     }, [userId]);
 
 

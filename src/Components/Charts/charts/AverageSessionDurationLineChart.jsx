@@ -15,7 +15,18 @@ function AverageSessionDurationLineChart({ userId }) {
             .catch(error => console.error('Error fetching data:', error));
     }, [userId]);
 
-    
+
+    // Mappage des numéros de jours aux lettres des jours de la semaine
+    const daysOfWeek = {
+        1: 'L', // Lundi
+        2: 'M', // Mardi
+        3: 'M', // Mercredi
+        4: 'J', // Jeudi
+        5: 'V', // Vendredi
+        6: 'S', // Samedi
+        7: 'D', // Dimanche
+    };
+
 
     return (
         <div className="chart-wrapper duree">
@@ -28,6 +39,7 @@ function AverageSessionDurationLineChart({ userId }) {
                     <CartesianGrid strokeDasharray="3 3" vertical={false} horizontal={false} />
                     <XAxis 
                         dataKey="day" 
+                        tickFormatter={(value) => daysOfWeek[value]} // Remplace les chiffres par les lettres
                         tick={{ fill: '#FBFBFB' }} 
                         tickLine={false} // Supprime les petits traits sur l'axe des abscisses
                         axisLine={false} // Supprime la ligne de l'axe des abscisses

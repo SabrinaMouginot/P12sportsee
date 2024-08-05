@@ -27,29 +27,40 @@ function AverageSessionDurationLineChart({ userId }) {
         7: 'D', // Dimanche
     };
 
+    // Tooltip personnalisé
+    const CustomTooltip = ({ active, payload }) => {
+        if (active && payload && payload.length) {
+            return (
+                <div className="custom-tooltip">
+                    <p className="label">{`${payload[0].value} min`}</p>
+                </div>
+            );
+        }
+        return null;
+    };
 
     return (
         <div className="chart-wrapper duree">
             <h2 className="title">Durée moyenne des sessions</h2>
 
             <ResponsiveContainer width="100%" height={250}>
-                <AreaChart 
+                <AreaChart
                     data={data}
                 >
                     <CartesianGrid strokeDasharray="3 3" vertical={false} horizontal={false} />
-                    <XAxis 
-                        dataKey="day" 
+                    <XAxis
+                        dataKey="day"
                         tickFormatter={(value) => daysOfWeek[value]} // Remplace les chiffres par les lettres
-                        tick={{ fill: '#FBFBFB' }} 
+                        tick={{ fill: '#FBFBFB' }}
                         tickLine={false} // Supprime les petits traits sur l'axe des abscisses
                         axisLine={false} // Supprime la ligne de l'axe des abscisses
                     />
-                    <Tooltip />
-                    <Area 
-                        type="monotone" 
-                        dataKey="sessionLength" 
-                        stroke="#FBFBFB" 
-                        strokeWidth={2} 
+                    <Tooltip content={<CustomTooltip />} />
+                    <Area
+                        type="monotone"
+                        dataKey="sessionLength"
+                        stroke="#FBFBFB"
+                        strokeWidth={2}
                         fill="url(#colorRed)" // Utilisation d'un dégradé pour remplir l'espace sous la courbe
                     />
                     <defs>

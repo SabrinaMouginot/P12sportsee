@@ -8,5 +8,17 @@
   font-size: 15px;
   padding: 10px 20px;
 }
+.duree .custom-tooltip {
+  width: 39px;
+  height: 25px;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 8px;
+  font-weight: bold;
+  color: #000000;
+}
 
 /*# sourceMappingURL=AverageSessionDurationLineChart.css.map */

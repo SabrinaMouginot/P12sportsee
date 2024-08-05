@@ -1,29 +1,8 @@
-import { useEffect, useState } from 'react';
 import { PieChart, Pie, ResponsiveContainer } from 'recharts';
-import axios from 'axios';
 import '../../../sass/ScoreDonutChart.scss';
 import PropTypes from 'prop-types';
 
-function ScoreDonutChart({ userId }) {
-    const [score, setScore] = useState(0); // Assurez-vous que la valeur initiale est 0, pas un tableau
-
-    useEffect(() => {
-        // Appel API pour récupérer les données utilisateur
-        const fetchData = async () => {
-            try {
-                const response = await axios.get(`http://localhost:3000/user/${userId}`);
-                const userData = response.data.data;
-
-                // Vérifier si les données contiennent 'score' ou 'todayScore'
-                const userScore = userData.score || userData.todayScore || 0;
-                setScore(userScore);
-            } catch (error) {
-                console.error('Erreur lors de la récupération des données:', error);
-            }
-        };
-
-        fetchData();
-    }, [userId]);
+function ScoreDonutChart({ score }) {
 
     // Données pour le graphique en donut
     const data = [
@@ -68,7 +47,7 @@ function ScoreDonutChart({ userId }) {
                         dominantBaseline="middle"
                         className="score-text"
                     >
-                        {`${(score * 100).toFixed(0)}%`}
+                        {`${score}%`}
                         <tspan x="50%" dy="1.2em" className="score-subtext">
                             de votre objectif
                         </tspan>
@@ -80,7 +59,7 @@ function ScoreDonutChart({ userId }) {
 }
 
 ScoreDonutChart.propTypes = {
-    userId: PropTypes.string.isRequired,
+    score: PropTypes.number.isRequired,
 };
 
 export default ScoreDonutChart;

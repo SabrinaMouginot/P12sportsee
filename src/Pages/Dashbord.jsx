@@ -1,6 +1,6 @@
 import { useParams } from "react-router";
-import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { getUserData } from "../API/api";
 
 import '../css/Dashbord.css';
 import NotFound from "./NotFound";
@@ -28,11 +28,7 @@ function Dashbord() {
     const [data, setData] = useState();
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/user/${userId}`)
-            .then(response => {
-                setData(response.data.data);
-            })
-            .catch(error => console.error('Error fetching data:', error));
+        getUserData(userId).then(userData => setData(userData))
     }, [userId]); // Ajout de userId comme dépendance
 
     if (!data) {
@@ -42,16 +38,16 @@ function Dashbord() {
             <div className="dashbord">
                 <div className="container">
                     <div className="txtContainer">
-                        <h1>Bonjour <span className="prenom">{data.userInfos.firstName}</span></h1>
+                        <h1>Bonjour <span className="prenom">{data.firstName}</span></h1>
                         <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
                     </div>
                     <div className="grid-container">
                         <ActivityBarChart userId={userId} />
                         <div className="nutriments">
-                            <Nutriment icon={caloriesIcon} value={`${data.keyData.calorieCount}kcal`} label="Calories" />
-                            <Nutriment icon={proteinesIcon} value={`${data.keyData.proteinCount}g`} label="Protéines" />
-                            <Nutriment icon={glucidesIcon} value={`${data.keyData.carbohydrateCount}g`} label="Glucides" />
-                            <Nutriment icon={lipidesIcon} value={`${data.keyData.lipidCount}g`} label="Lipides" />
+                            <Nutriment icon={caloriesIcon} value={`${data.calorieCount}kcal`} label="Calories" />
+                            <Nutriment icon={proteinesIcon} value={`${data.proteinCount}g`} label="Protéines" />
+                            <Nutriment icon={glucidesIcon} value={`${data.carbohydrateCount}g`} label="Glucides" />
+                            <Nutriment icon={lipidesIcon} value={`${data.lipidCount}g`} label="Lipides" />
                         </div>
                         <div className="bottom-row">
                             <div className="item duree">
@@ -61,7 +57,7 @@ function Dashbord() {
                             <PerformanceRadarChart userId={userId} />
                             </div>
                             <div className="item score">
-                            <ScoreDonutChart userId={userId}/>
+                            <ScoreDonutChart score={data.score}/>
                             </div>
                         </div>
                     </div>

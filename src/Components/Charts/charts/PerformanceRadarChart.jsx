@@ -82,7 +82,7 @@ function PerformanceRadarChart({ userId }) {
                         tickFormatter={(index) => labels[index]} // Formater les labels
                         tick={{ fill: '#FFFFFF', fontSize: 12 }} // Couleur et taille des labels
                     />
-                    <Radar dataKey="value" fill="#FF0101" />
+                    <Radar dataKey="value" fill="rgba(255, 1, 1, 0.70)" />
                 </RadarChart>
             </ResponsiveContainer>
         </div>

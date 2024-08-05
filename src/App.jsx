@@ -12,7 +12,7 @@ function App() {
         <Header />
           <Routes>
             <Route path="/:userId" element={<Dashbord />} />
-            <Route path="/" element={<NotFound />} />
+            <Route path="*" element={<NotFound />} />
             {/* Ajouter d'autres routes ici si nécessaire */}
           </Routes>
         <Footer />

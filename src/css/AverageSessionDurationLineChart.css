@@ -1,9 +1,12 @@
 .duree {
   background-color: #FF0000;
   color: white;
-  padding: 20px;
   border-radius: 5px;
   font-size: 15px;
+}
+.duree .title {
+  font-size: 15px;
+  padding: 10px 20px;
 }
 
 /*# sourceMappingURL=AverageSessionDurationLineChart.css.map */

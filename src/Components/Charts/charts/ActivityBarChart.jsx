@@ -16,7 +16,7 @@ function ActivityBarChart({ userId }) {
     }, [userId]);
 
     // Fonction pour customiser le tooltip
-    const CustomTooltip = ({ payload }) => {
+    const CustomTooltip = ({ payload }) => { //payload affiche des informations sur les données survolées dans un graphique.
         if (payload && payload.length) {
             return (
                 <div className="custom-tooltip">
@@ -30,8 +30,8 @@ function ActivityBarChart({ userId }) {
 
     // Ajout des propTypes pour le CustomTooltip
     CustomTooltip.propTypes = {
-        payload: PropTypes.arrayOf(
-            PropTypes.shape({
+        payload: PropTypes.arrayOf(  //la prop payload que le composant CustomTooltip attend doit être un tableau.
+            PropTypes.shape({  // shape définit la forme spécifique de l'objet
                 value: PropTypes.number.isRequired, // Valide que `value` est un nombre
             })
         ).isRequired,

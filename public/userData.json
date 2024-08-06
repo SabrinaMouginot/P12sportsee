@@ -1,34 +1,185 @@
 {
     "data": [
-        {
-            "id": 12,
-            "userInfos": {
-                "firstName": "Karl",
-                "lastName": "Dovineau",
-                "age": 31
-            },
-            "todayScore": 0.12,
-            "keyData": {
-                "calorieCount": 1930,
-                "proteinCount": 155,
-                "carbohydrateCount": 290,
-                "lipidCount": 50
-            }
+      {
+        "id": 12,
+        "name": "Karl",
+        "todayScore": 12,
+        "nutriments": {
+          "calories": 1930,
+          "proteins": 155,
+          "carbohydrates": 290,
+          "lipids": 50
         },
-        {
-            "id": 18,
-            "userInfos": {
-                "firstName": "Cecilia",
-                "lastName": "Ratorez",
-                "age": 34
-            },
-            "score": 0.3,
-            "keyData": {
-                "calorieCount": 2500,
-                "proteinCount": 90,
-                "carbohydrateCount": 150,
-                "lipidCount": 120
-            }
-        }
+        "activity": [
+          {
+            "kilogram": 80,
+            "calories": 240
+          },
+          {
+            "kilogram": 80,
+            "calories": 220
+          },
+          {
+            "kilogram": 81,
+            "calories": 280
+          },
+          {
+            "kilogram": 81,
+            "calories": 290
+          },
+          {
+            "kilogram": 80,
+            "calories": 160
+          },
+          {
+            "kilogram": 78,
+            "calories": 162
+          },
+          {
+            "kilogram": 76,
+            "calories": 390
+          }
+        ],
+        "averageSession": [
+          {
+            "duration": 30
+          },
+          {
+            "duration": 23
+          },
+          {
+            "duration": 45
+          },
+          {
+            "duration": 50
+          },
+          {
+            "duration": 0
+          },
+          {
+            "duration": 0
+          },
+          {
+            "duration": 60
+          }
+        ],
+        "performance": [
+          {
+            "kind": "intensity",
+            "value": 90
+          },
+          {
+            "kind": "speed",
+            "value": 200
+          },
+          {
+            "kind": "strength",
+            "value": 50
+          },
+          {
+            "kind": "endurance",
+            "value": 140
+          },
+          {
+            "kind": "energy",
+            "value": 120
+          },
+          {
+            "kind": "cardio",
+            "value": 80
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "name": "Cecilia",
+        "todayScore": 30,
+        "nutriments": {
+          "calories": 2500,
+          "proteins": 90,
+          "carbohydrates": 150,
+          "lipids": 120
+        },
+        "activity": [
+          {
+            "kilogram": 70,
+            "calories": 240
+          },
+          {
+            "kilogram": 69,
+            "calories": 220
+          },
+          {
+            "kilogram": 70,
+            "calories": 280
+          },
+          {
+            "kilogram": 70,
+            "calories": 500
+          },
+          {
+            "kilogram": 69,
+            "calories": 160
+          },
+          {
+            "kilogram": 69,
+            "calories": 162
+          },
+          {
+            "kilogram": 69,
+            "calories": 390
+          }
+        ],
+        "averageSession": [
+          {
+            "duration": 30
+          },
+          {
+            "duration": 40
+          },
+          {
+            "duration": 50
+          },
+          {
+            "duration": 30
+          },
+          {
+            "duration": 30
+          },
+          {
+            "duration": 50
+          },
+          {
+            "duration": 50
+          }
+        ],
+        "performance": [
+          {
+            "kind": "intensity",
+            "value": 110
+          },
+          {
+            "kind": "speed",
+            "value": 220
+          },
+          {
+            "kind": "strength",
+            "value": 80
+          },
+          {
+            "kind": "endurance",
+            "value": 80
+          },
+          {
+            "kind": "energy",
+            "value": 240
+          },
+          {
+            "kind": "cardio",
+            "value": 200
+          }
+        ]
+      }
     ]
-}
+  }
+  

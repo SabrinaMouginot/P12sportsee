@@ -5,7 +5,15 @@ const isApi = true;
 
 export async function getUserData(userId) {
     const res = await axios.get(isApi ? `http://localhost:3000/user/${userId}` : '/userData.json')
-    const data = res.data.data
+    const allData = res.data.data;
+
+    // Recherche de l'utilisateur par ID dans le fichier JSON
+    const data = isApi ? allData : allData.find(user => user.id === parseInt(userId));
+
+    if (!data) {
+        throw new Error('Utilisateur non trouvé');
+    }
+
     return new UserData(data.userInfos.firstName, data.score || data.todayScore, data.keyData.calorieCount, data.keyData.proteinCount, data.keyData.carbohydrateCount, data.keyData.lipidCount)
 }
 

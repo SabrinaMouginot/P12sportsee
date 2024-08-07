@@ -18,12 +18,12 @@ export async function getUserData(userId) {
     }
 
     return new UserData(
-        user.name,  // Adapté de `userInfos.firstName` à `name`
-        user.todayScore,  // Adapté de `score` ou `todayScore`
-        user.nutriments.calorieCount,  // Adapté de `keyData.calorieCount` à `nutriments.calorieCount`
-        user.nutriments.proteinCount,  // Adapté de `keyData.proteinCount` à `nutriments.proteinCount`
-        user.nutriments.carbohydrateCount,  // Adapté de `keyData.carbohydrateCount` à `nutriments.carbohydrateCount`
-        user.nutriments.lipidCount  // Adapté de `keyData.lipidCount` à `nutriments.lipidCount`
+        user.userInfos.firstName,  // Adapté de `userInfos.firstName` à `name`
+        user.score || user.todayScore,  // Adapté de `score` ou `todayScore`
+        user.keyData.calorieCount,  // Adapté de `keyData.calorieCount` à `keyData.calorieCount`
+        user.keyData.proteinCount,  // Adapté de `keyData.proteinCount` à `keyData.proteinCount`
+        user.keyData.carbohydrateCount,  // Adapté de `keyData.carbohydrateCount` à `keyData.carbohydrateCount`
+        user.keyData.lipidCount  // Adapté de `keyData.lipidCount` à `nutriments.lipidCount`
     );
     
 //     return new UserData(data.userInfos.firstName, data.score || data.todayScore, data.keyData.calorieCount, data.keyData.proteinCount, data.keyData.carbohydrateCount, data.keyData.lipidCount)

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { UserData } from './user.model';
 
-const isApi = false;
+const isApi = true;
 
 export async function getUserData(userId) {
     const res = await axios.get(isApi ? `http://localhost:3000/user/${userId}` : '/userData.json')
@@ -18,12 +18,12 @@ export async function getUserData(userId) {
     }
 
     return new UserData(
-        user.userInfos.firstName,  // Adapté de `userInfos.firstName` à `name`
-        user.score || user.todayScore,  // Adapté de `score` ou `todayScore`
-        user.keyData.calorieCount,  // Adapté de `keyData.calorieCount` à `keyData.calorieCount`
-        user.keyData.proteinCount,  // Adapté de `keyData.proteinCount` à `keyData.proteinCount`
-        user.keyData.carbohydrateCount,  // Adapté de `keyData.carbohydrateCount` à `keyData.carbohydrateCount`
-        user.keyData.lipidCount  // Adapté de `keyData.lipidCount` à `nutriments.lipidCount`
+        user.userInfos.firstName,
+        user.score || user.todayScore,
+        user.keyData.calorieCount,
+        user.keyData.proteinCount,
+        user.keyData.carbohydrateCount,
+        user.keyData.lipidCount
     );
     
 //     return new UserData(data.userInfos.firstName, data.score || data.todayScore, data.keyData.calorieCount, data.keyData.proteinCount, data.keyData.carbohydrateCount, data.keyData.lipidCount)

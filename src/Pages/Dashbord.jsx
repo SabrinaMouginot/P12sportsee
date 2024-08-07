@@ -90,37 +90,5 @@ if (!data) {
         </div>
     );
 }
-//         return (
-//             <div className="dashbord">
-//                 <div className="container">
-//                     <div className="txtContainer">
-//                         <h1>Bonjour <span className="prenom">{data.firstName}</span></h1>
-//                         <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
-//                     </div>
-//                     <div className="grid-container">
-//                         <ActivityBarChart userId={userId} />
-//                         <div className="nutriments">
-//                             <Nutriment icon={caloriesIcon} value={`${data.calorieCount}kcal`} label="Calories" />
-//                             <Nutriment icon={proteinesIcon} value={`${data.proteinCount}g`} label="Protéines" />
-//                             <Nutriment icon={glucidesIcon} value={`${data.carbohydrateCount}g`} label="Glucides" />
-//                             <Nutriment icon={lipidesIcon} value={`${data.lipidCount}g`} label="Lipides" />
-//                         </div>
-//                         <div className="bottom-row">
-//                             <div className="item duree">
-//                                 <AverageSessionDurationLineChart userId={userId} />
-//                             </div>
-//                             <div className="item perf">
-//                             <PerformanceRadarChart userId={userId} />
-//                             </div>
-//                             <div className="item score">
-//                             <ScoreDonutChart score={data.score}/>
-//                             </div>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//         );
-//     }
-// }
 
 export default Dashbord;

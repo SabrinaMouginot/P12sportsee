@@ -1,36 +1,46 @@
 import axios from 'axios';
 import { UserData } from './user.model';
 
-const isApi = true;
+const isApi = false;
 
 export async function getUserData(userId) {
     const res = await axios.get(isApi ? `http://localhost:3000/user/${userId}` : '/userData.json')
-    const allData = res.data.data;
+    const data = res.data.data
 
-    // Recherche de l'utilisateur par ID dans le fichier JSON
-    const data = isApi ? allData : allData.find(user => user.id === parseInt(userId));
+    console.log("Données reçues :", data);
 
-    if (!data) {
-        throw new Error('Utilisateur non trouvé');
+    const user = Array.isArray(data) ? data.find(user => user.id === parseInt(userId)) : data;
+
+    console.log("Utilisateur trouvé :", user);
+
+    if (!user) {
+        throw new Error(`User with ID ${userId} not found`);
     }
 
-    return new UserData(data.userInfos.firstName, data.score || data.todayScore, data.keyData.calorieCount, data.keyData.proteinCount, data.keyData.carbohydrateCount, data.keyData.lipidCount)
+    return new UserData(
+        user.name,  // Adapté de `userInfos.firstName` à `name`
+        user.todayScore,  // Adapté de `score` ou `todayScore`
+        user.nutriments.calorieCount,  // Adapté de `keyData.calorieCount` à `nutriments.calorieCount`
+        user.nutriments.proteinCount,  // Adapté de `keyData.proteinCount` à `nutriments.proteinCount`
+        user.nutriments.carbohydrateCount,  // Adapté de `keyData.carbohydrateCount` à `nutriments.carbohydrateCount`
+        user.nutriments.lipidCount  // Adapté de `keyData.lipidCount` à `nutriments.lipidCount`
+    );
+    
+//     return new UserData(data.userInfos.firstName, data.score || data.todayScore, data.keyData.calorieCount, data.keyData.proteinCount, data.keyData.carbohydrateCount, data.keyData.lipidCount)
 }
 
-export async function getUserActivities(userId) {
-    const res = await axios.get(`http://localhost:3000/user/${userId}/activity`)
 
-    return res.data.data.sessions
+export async function getUserActivities(userId) {
+    const res = await axios.get(`http://localhost:3000/user/${userId}/activity`);
+    return res.data.data.sessions;
 }
 
 export async function getUserSessions(userId) {
-    const res = await axios.get(`http://localhost:3000/user/${userId}/average-sessions`)
-
-    return res.data.data.sessions
+    const res = await axios.get(`http://localhost:3000/user/${userId}/average-sessions`);
+    return res.data.data.sessions;
 }
 
 export async function getUserPerformances(userId) {
-    const res = await axios.get(`http://localhost:3000/user/${userId}/performance`)
-
-    return res.data.data.data
+    const res = await axios.get(`http://localhost:3000/user/${userId}/performance`);
+    return res.data.data.data;
 }

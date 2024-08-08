@@ -28,27 +28,6 @@ export async function getUserData(userId) {
     );
 }
 
-// export async function getUserActivities(userId) {
-//     const data = await fetchData('/activity', userId);
-//     const activity = Array.isArray(data.USER_ACTIVITY) ? data.USER_ACTIVITY.find(user => user.userId === parseInt(userId)) : data;
-
-//     if (!activity) {
-//         throw new Error(`Activities for user with ID ${userId} not found`);
-//     }
-
-//     // Utilisation temporaire pour tester
-//     const sessions = activity.sessions;
-//     const mappedSessions = sessions.map(session => {
-//         return new UserActivity(
-//             session.day,
-//             session.kilogram,
-//             session.calories
-//         );
-//     });
-
-//     return mappedSessions;  // retourne le tableau final
-// }
-
 export async function getUserActivities(userId) {
     const data = await fetchData('/activity', userId);
     

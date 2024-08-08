@@ -37,3 +37,13 @@ export class UserSession {
         this.sessionLength = sessionLength;  // Durée de la session en minutes
     }
 }
+
+export class UserPerformance {
+    value
+    kind
+    
+    constructor(value, kind) {
+        this.value = value;  // Valeur de la performance
+        this.kind = kind;  // Type de performance (ex: cardio, force, etc.)
+    }
+}

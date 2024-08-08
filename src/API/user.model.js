@@ -16,15 +16,30 @@ export class UserData {
     }
 }
 
-export class UserActivity {
-    day
-    kilogram
-    calories
+// export class UserActivity {
+//     day
+//     kilogram
+//     calories
 
-    constructor(day, kilogram, calories) {
-        this.day = day;  // Jour de l'activité
-        this.kilogram = kilogram;  // Poids en kg
-        this.calories = calories;  // Calories brûlées
+//     constructor(day, kilogram, calories) {
+//         this.day = day;  // Jour de l'activité
+//         this.kilogram = kilogram;  // Poids en kg
+//         this.calories = calories;  // Calories brûlées
+//     }
+// }
+
+export class UserActivity {
+    constructor(sessions) {
+        this.sessions = sessions.map(session => ({
+            day: session.day,
+            kilogram: session.kilogram,
+            calories: session.calories
+        }));
+    }
+
+    getAverageCalories() {
+        const totalCalories = this.sessions.reduce((sum, session) => sum + session.calories, 0);
+        return totalCalories / this.sessions.length;
     }
 }
 

@@ -30,32 +30,23 @@ export async function getUserData(userId) {
 
 export async function getUserActivities(userId) {
     const data = await fetchData('/activity', userId);
-
     const activity = Array.isArray(data.USER_ACTIVITY) ? data.USER_ACTIVITY.find(user => user.userId === parseInt(userId)) : data;
 
     if (!activity) {
         throw new Error(`Activities for user with ID ${userId} not found`);
     }
 
-    // return activity.sessions.map(session => new UserActivity(
-    //     activity.session.day,
-    //     activity.session.kilogram,
-    //     activity.session.calories
-    // ));
-
     // Utilisation temporaire pour tester
     const sessions = activity.sessions;
     const mappedSessions = sessions.map(session => {
         return new UserActivity(
-            session.day,          // Utilisation correcte de session.day
-            session.kilogram,     // Utilisation correcte de session.kilogram
-            session.calories      // Utilisation correcte de session.calories
+            session.day,
+            session.kilogram,
+            session.calories
         );
     });
 
     return mappedSessions;  // retourne le tableau final
-
-    // return isApi ? data.sessions : data.USER_ACTIVITY.find(activity => activity.userId === parseInt(userId)).sessions;
 }
 
 export async function getUserSessions(userId) {

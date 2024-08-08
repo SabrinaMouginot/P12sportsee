@@ -44,21 +44,47 @@ export class UserActivity {
 }
 
 export class UserSession {
-    day
-    sessionLength
-
     constructor(day, sessionLength) {
-        this.day = day;  // Jour de la semaine (numérique)
-        this.sessionLength = sessionLength;  // Durée de la session en minutes
+        this.day = this.convertDayToString(day);
+        this.sessionLength = sessionLength;
+    }
+
+    convertDayToString(day) {
+        const daysOfWeek = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
+        return daysOfWeek[day - 1];
     }
 }
 
 export class UserPerformance {
-    value
-    kind
-    
-    constructor(value, kind) {
-        this.value = value;  // Valeur de la performance
-        this.kind = kind;  // Type de performance (ex: cardio, force, etc.)
+    constructor(data, kind) {
+        this.performance = data.map(item => ({
+            value: item.value,
+            type: kind[item.kind]
+        }));
+    }
+
+    getMaxPerformance() {
+        return this.performance.reduce((max, current) => current.value > max.value ? current : max);
     }
 }
+
+
+// export class UserSession {
+//     day
+//     sessionLength
+
+//     constructor(day, sessionLength) {
+//         this.day = day;  // Jour de la semaine (numérique)
+//         this.sessionLength = sessionLength;  // Durée de la session en minutes
+//     }
+// }
+
+// export class UserPerformance {
+//     value
+//     kind
+    
+//     constructor(value, kind) {
+//         this.value = value;  // Valeur de la performance
+//         this.kind = kind;  // Type de performance (ex: cardio, force, etc.)
+//     }
+// }

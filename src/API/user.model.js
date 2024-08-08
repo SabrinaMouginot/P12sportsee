@@ -27,3 +27,13 @@ export class UserActivity {
         this.calories = calories;  // Calories brûlées
     }
 }
+
+export class UserSession {
+    day
+    sessionLength
+
+    constructor(day, sessionLength) {
+        this.day = day;  // Jour de la semaine (numérique)
+        this.sessionLength = sessionLength;  // Durée de la session en minutes
+    }
+}

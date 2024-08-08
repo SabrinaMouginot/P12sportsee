@@ -15,3 +15,15 @@ export class UserData {
         this.lipidCount = lipidCount
     }
 }
+
+export class UserActivity {
+    day
+    kilogram
+    calories
+
+    constructor(day, kilogram, calories) {
+        this.day = day;  // Jour de l'activité
+        this.kilogram = kilogram;  // Poids en kg
+        this.calories = calories;  // Calories brûlées
+    }
+}

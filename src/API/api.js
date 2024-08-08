@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { UserData } from './user.model';
+import { UserData, UserActivity } from './user.model';
 
 const isApi = false;
 
@@ -30,7 +30,19 @@ export async function getUserData(userId) {
 
 export async function getUserActivities(userId) {
     const data = await fetchData('/activity', userId);
-    return isApi ? data.sessions : data.USER_ACTIVITY.find(activity => activity.userId === parseInt(userId)).sessions;
+
+    const activity = Array.isArray(data.USER_ACTIVITY) ? data.USER_ACTIVITY.find(user => user.id === parseInt(userId)) : data;
+
+    if (!activity) {
+        throw new Error(`User with ID ${userId} not found`);
+    }
+
+    return new UserActivity(
+        activity.sessions.day,
+        activity.sessions.kilogram,
+        activity.sessions.calories
+    )
+    // return isApi ? data.sessions : data.USER_ACTIVITY.find(activity => activity.userId === parseInt(userId)).sessions;
 }
 
 export async function getUserSessions(userId) {

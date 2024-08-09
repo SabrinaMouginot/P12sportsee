@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { UserData, UserActivity } from './user.model';
+import { UserData, UserActivity, UserSession, UserPerformance } from './user.model';
 
 const isApi = false;
 
@@ -49,11 +49,50 @@ export async function getUserActivities(userId) {
 
 
 export async function getUserSessions(userId) {
-    const data = await fetchData('/average-sessions', userId);
-    return isApi ? data.sessions : data.USER_AVERAGE_SESSIONS.find(session => session.userId === parseInt(userId)).sessions;
+    const data = await fetchData('/sessions', userId);
+
+    // Trouver les sessions pour l'utilisateur spécifique
+    const session = Array.isArray(data.USER_AVERAGE_SESSIONS) 
+        ? data.USER_AVERAGE_SESSIONS.find(user => user.userId === parseInt(userId)) 
+        : data;
+
+    if (!session) {
+        throw new Error(`Sessions for user with ID ${userId} not found`);
+    }
+
+    // Créer une instance de UserSession avec toutes les sessions
+    const userSession = new UserSession(session.sessions);
+
+    // Si ton graphique attend un tableau de sessions, retourne simplement userSession.sessions
+    return userSession.sessions;
 }
+
+
+// export async function getUserSessions(userId) {
+//     const data = await fetchData('/average-sessions', userId);
+//     return isApi ? data.sessions : data.USER_AVERAGE_SESSIONS.find(session => session.userId === parseInt(userId)).sessions;
+// }
 
 export async function getUserPerformances(userId) {
     const data = await fetchData('/performance', userId);
-    return isApi ? data.data : data.USER_PERFORMANCE.find(performance => performance.userId === parseInt(userId)).data;
+
+    const performanceData = Array.isArray(data.USER_PERFORMANCE) 
+        ? data.USER_PERFORMANCE.find(user => user.userId === parseInt(userId)) 
+        : data;
+
+    if (!performanceData) {
+        throw new Error(`Performance data for user with ID ${userId} not found`);
+    }
+
+    // Créer une instance de UserPerformance avec les performances de l'utilisateur
+    const userPerformance = new UserPerformance(performanceData.data, performanceData.kind);
+
+    return userPerformance.performance; // Retourner le tableau des performances
 }
+
+
+
+// export async function getUserPerformances(userId) {
+//     const data = await fetchData('/performance', userId);
+//     return isApi ? data.data : data.USER_PERFORMANCE.find(performance => performance.userId === parseInt(userId)).data;
+// }

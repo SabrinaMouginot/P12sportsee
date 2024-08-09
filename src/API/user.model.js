@@ -31,18 +31,6 @@ export class UserActivity {
     }
 }
 
-// export class UserSession {
-//     constructor(day, sessionLength) {
-//         this.day = this.convertDayToString(day);
-//         this.sessionLength = sessionLength;
-//     }
-
-//     convertDayToString(day) {
-//         const daysOfWeek = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
-//         return daysOfWeek[day - 1] || 'Inconnu'; // Ajout d'un fallback pour les valeurs non attendues
-//     }
-// }
-
 export class UserSession {
     constructor(sessions) {
         this.sessions = sessions.map(session => ({
@@ -59,9 +47,5 @@ export class UserPerformance {
             value: item.value,
             type: kind[item.kind]
         }));
-    }
-
-    getMaxPerformance() {
-        return this.performance.reduce((max, current) => current.value > max.value ? current : max);
     }
 }

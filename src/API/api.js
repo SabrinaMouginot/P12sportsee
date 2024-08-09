@@ -91,7 +91,6 @@ export async function getUserPerformances(userId) {
 }
 
 
-
 // export async function getUserPerformances(userId) {
 //     const data = await fetchData('/performance', userId);
 //     return isApi ? data.data : data.USER_PERFORMANCE.find(performance => performance.userId === parseInt(userId)).data;

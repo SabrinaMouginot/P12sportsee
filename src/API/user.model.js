@@ -25,19 +25,22 @@ export class UserActivity {
         }));
     }
 
-    getAverageCalories() {
-        const totalCalories = this.sessions.reduce((sum, session) => sum + session.calories, 0);
-        return totalCalories / this.sessions.length;
-    }
+    // getAverageCalories() {
+    //     const totalCalories = this.sessions.reduce((sum, session) => sum + session.calories, 0);
+    //     return totalCalories / this.sessions.length;
+    // }
 }
 
 export class UserSession {
-    constructor(sessions) {
-        this.sessions = sessions.map(session => ({
-            day: session.day,
-            sessionLength: session.sessionLength
-        }));
+    constructor(day, sessionLength) {
+        this.day = this.convertDayToString(day);
+        this.sessionLength = sessionLength;
     }
+
+    //     convertDayToString(day) {
+    //         const daysOfWeek = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
+    //         return daysOfWeek[day - 1] || 'Inconnu'; // Ajout d'un fallback pour les valeurs non attendues
+    //     }
 }
 
 
@@ -48,4 +51,8 @@ export class UserPerformance {
             type: kind[item.kind]
         }));
     }
+
+    // getMaxPerformance() {
+    //     return this.performance.reduce((max, current) => current.value > max.value ? current : max);
+    // }
 }

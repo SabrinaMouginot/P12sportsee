@@ -6,14 +6,14 @@ const isApi = false;
 async function fetchData(endpoint, userId) {
     const url = isApi ? `http://localhost:3000/user/${userId}${endpoint}` : '/userData.json';
     const res = await axios.get(url);
-    
+
     return isApi ? res.data.data : res.data;
 }
 
 export async function getUserData(userId) {
     const data = await fetchData('', userId);
     const user = Array.isArray(data.USER_MAIN_DATA) ? data.USER_MAIN_DATA.find(user => user.id === parseInt(userId)) : data;
-    
+
     if (!user) {
         throw new Error(`User with ID ${userId} not found`);
     }
@@ -30,10 +30,10 @@ export async function getUserData(userId) {
 
 export async function getUserActivities(userId) {
     const data = await fetchData('/activity', userId);
-    
+
     // Trouver les activités pour l'utilisateur spécifique
-    const activity = Array.isArray(data.USER_ACTIVITY) 
-        ? data.USER_ACTIVITY.find(user => user.userId === parseInt(userId)) 
+    const activity = Array.isArray(data.USER_ACTIVITY)
+        ? data.USER_ACTIVITY.find(user => user.userId === parseInt(userId))
         : data;
 
     if (!activity) {
@@ -52,8 +52,8 @@ export async function getUserSessions(userId) {
     const data = await fetchData('/sessions', userId);
 
     // Trouver les sessions pour l'utilisateur spécifique
-    const session = Array.isArray(data.USER_AVERAGE_SESSIONS) 
-        ? data.USER_AVERAGE_SESSIONS.find(user => user.userId === parseInt(userId)) 
+    const session = Array.isArray(data.USER_AVERAGE_SESSIONS)
+        ? data.USER_AVERAGE_SESSIONS.find(user => user.userId === parseInt(userId))
         : data;
 
     if (!session) {
@@ -76,8 +76,8 @@ export async function getUserSessions(userId) {
 export async function getUserPerformances(userId) {
     const data = await fetchData('/performance', userId);
 
-    const performanceData = Array.isArray(data.USER_PERFORMANCE) 
-        ? data.USER_PERFORMANCE.find(user => user.userId === parseInt(userId)) 
+    const performanceData = Array.isArray(data.USER_PERFORMANCE)
+        ? data.USER_PERFORMANCE.find(user => user.userId === parseInt(userId))
         : data;
 
     if (!performanceData) {

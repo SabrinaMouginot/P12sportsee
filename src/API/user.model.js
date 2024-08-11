@@ -8,7 +8,7 @@ export class UserData {
 
     constructor(firstName, score, calorieCount, proteinCount, carbohydrateCount, lipidCount) {
         this.firstName = firstName
-        this.score = (score * 100).toFixed(0)
+        this.score = (score * 100)
         this.calorieCount = calorieCount
         this.proteinCount = proteinCount
         this.carbohydrateCount = carbohydrateCount

@@ -39,7 +39,6 @@ function ScoreDonutChart({ score }) {
                         startAngle={90}
                         endAngle={scoreEndAngle}
                         fill="#FF0000"
-                        // Important d'utiliser `fill` ici pour la couleur
                     />
                     <text
                         x="50%"

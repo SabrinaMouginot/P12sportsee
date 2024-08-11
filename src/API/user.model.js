@@ -45,11 +45,22 @@ export class UserSession {
 }
 
 export class UserPerformance {
-    constructor(data, kind) {
+    // Mappage des indices aux libellés personnalisés
+    static performanceLabels = {
+        1: 'Intensité',
+        2: 'Vitesse',
+        3: 'Force',
+        4: 'Endurance',
+        5: 'Energie',
+        6: 'Cardio'
+    };
+
+    constructor(data) {
         this.performance = data.map(item => ({
             value: item.value,
-            type: kind[item.kind]
+            type: UserPerformance.performanceLabels[item.kind] || 'Inconnu' // Utilisation des libellés personnalisés
         }));
     }
 }
+
 

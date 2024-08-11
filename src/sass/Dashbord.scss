@@ -2,7 +2,7 @@
     .container {
         grid-column: 2;
         grid-row: 2;
-        margin: 40px 60px 60px 80px;
+        margin: 60px;
 
         .txtContainer {
             margin-bottom: 40px;
@@ -40,13 +40,21 @@
             .bottom-row {
                 grid-area: bottom-row;
                 display: flex;
-                gap: 30px;
+                gap: 20px;
 
                 .item {
                     flex: 1;
                     aspect-ratio: 258 / 263;
                     /* Respecter le ratio largeur/hauteur */
                     height: auto;
+
+                    .chart-wrapper {
+                        flex: 1 1 calc(33.33% - 10px); // Chaque graphique occupe un tiers de la largeur de la rangée avec un écart de 10px
+                        max-width: 258px; // Limiter la largeur maximale
+                        height: calc(100vh * 0.34); // Ajuster la hauteur à environ un tiers de la hauteur de la fenêtre
+                        // min-height: 200px; // Limiter la hauteur minimale pour les petites fenêtres
+                        max-height: 263px; // Limiter la hauteur maximale
+                    }
 
                     p{
                         margin: 0;

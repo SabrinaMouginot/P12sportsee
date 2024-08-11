@@ -2,13 +2,19 @@
 
 .score {
     background-color: #FBFBFB;
+    position: relative;
     @include style-box-charts;
 
     .title {
         text-align: left;
         font-size: 16px;
         font-weight: 500;
-        padding: 20px;
+        // padding: 20px;
+        position: absolute;
+        top: 10px;
+        left: 25%;
+        transform: translateX(-50%);
+        z-index: 10;
     }
 
     .score-text {

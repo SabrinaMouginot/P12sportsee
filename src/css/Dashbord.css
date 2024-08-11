@@ -2,7 +2,7 @@
 .dashbord .container {
   grid-column: 2;
   grid-row: 2;
-  margin: 40px 60px 60px 80px;
+  margin: 60px;
 }
 .dashbord .container .txtContainer {
   margin-bottom: 40px;
@@ -33,13 +33,19 @@
 .dashbord .container .grid-container .bottom-row {
   grid-area: bottom-row;
   display: flex;
-  gap: 30px;
+  gap: 20px;
 }
 .dashbord .container .grid-container .bottom-row .item {
   flex: 1;
   aspect-ratio: 258/263;
   /* Respecter le ratio largeur/hauteur */
   height: auto;
+}
+.dashbord .container .grid-container .bottom-row .item .chart-wrapper {
+  flex: 1 1 calc(33.33% - 10px);
+  max-width: 258px;
+  height: 34vh;
+  max-height: 263px;
 }
 .dashbord .container .grid-container .bottom-row .item p {
   margin: 0;

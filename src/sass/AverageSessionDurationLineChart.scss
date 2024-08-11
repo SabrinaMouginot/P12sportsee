@@ -4,10 +4,16 @@
     @include style-box-charts;
     background-color: #FF0000;
     color: white;
+    position: relative;
 
     .title {
         font-size: 15px;
         padding: 10px 20px;
+        position: absolute;
+        // top: 10px;
+        // left: 25%;
+        // transform: translateX(-50%);
+        z-index: 10;
     }
 
     .custom-tooltip {
@@ -22,5 +28,4 @@
         font-weight: bold;
         color: #000000;
     }
-    
 }

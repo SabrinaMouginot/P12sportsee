@@ -24,15 +24,15 @@ import '../css/ScoreDonutChart.css';
 
 function Dashbord() {
     const { userId } = useParams();
-//     console.log(userId);
+    //     console.log(userId);
 
     const [data, setData] = useState();
 
     const [error, setError] = useState(null);
 
-//     useEffect(() => {
-//         getUserData(userId).then(userData => setData(userData))
-//     }, [userId]); // Ajout de userId comme dépendance
+    //     useEffect(() => {
+    //         getUserData(userId).then(userData => setData(userData))
+    //     }, [userId]); // Ajout de userId comme dépendance
 
     useEffect(() => {
         async function fetchAllData() {
@@ -47,17 +47,20 @@ function Dashbord() {
         fetchAllData();
     }, [userId]);
 
+    //     if (!data) {
+    //         return <NotFound />;
+    //     } else {
+
     if (error) {
         return <NotFound />;
     }
 
-//     if (!data) {
-//         return <NotFound />;
-//     } else {
+    if (!data) {
+        return <div>Loading...</div>;
+    }
 
-if (!data) {
-    return <div>Loading...</div>;
-}
+
+
     return (
         <div className="dashbord">
             <div className="container">
@@ -65,7 +68,7 @@ if (!data) {
                     <h1>Bonjour <span className="prenom">{data.firstName}</span></h1>
                     <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
                 </div>
-                
+
                 <div className="grid-container">
                     <ActivityBarChart userId={userId} />
                     <div className="nutriments">

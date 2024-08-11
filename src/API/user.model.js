@@ -24,25 +24,25 @@ export class UserActivity {
             calories: session.calories
         }));
     }
-
-    // getAverageCalories() {
-    //     const totalCalories = this.sessions.reduce((sum, session) => sum + session.calories, 0);
-    //     return totalCalories / this.sessions.length;
-    // }
 }
 
 export class UserSession {
+    // Mappage des numéros de jours aux lettres des jours de la semaine
+    static daysOfWeekShort = {
+        1: 'L',
+        2: 'M',
+        3: 'M',
+        4: 'J',
+        5: 'V',
+        6: 'S',
+        7: 'D',
+    };
+
     constructor(day, sessionLength) {
-        this.day = this.convertDayToString(day);
+        this.day = UserSession.daysOfWeekShort[day] || 'Inconnu'; // Assurez-vous que le jour est correctement mappé
         this.sessionLength = sessionLength;
     }
-
-    //     convertDayToString(day) {
-    //         const daysOfWeek = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
-    //         return daysOfWeek[day - 1] || 'Inconnu'; // Ajout d'un fallback pour les valeurs non attendues
-    //     }
 }
-
 
 export class UserPerformance {
     constructor(data, kind) {
@@ -51,8 +51,5 @@ export class UserPerformance {
             type: kind[item.kind]
         }));
     }
-
-    // getMaxPerformance() {
-    //     return this.performance.reduce((max, current) => current.value > max.value ? current : max);
-    // }
 }
+

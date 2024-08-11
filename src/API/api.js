@@ -6,7 +6,6 @@ const isApi = false;
 async function fetchData(endpoint, userId) {
     const url = isApi ? `http://localhost:3000/user/${userId}${endpoint}` : '/userData.json';
     const res = await axios.get(url);
-
     return isApi ? res.data.data : res.data;
 }
 
@@ -50,28 +49,33 @@ export async function getUserActivities(userId) {
 
 export async function getUserSessions(userId) {
     const data = await fetchData('/sessions', userId);
+    console.log('Fetched data:', data); // Vérifier les données brutes reçues
 
     // Trouver les sessions pour l'utilisateur spécifique
     const session = Array.isArray(data.USER_AVERAGE_SESSIONS)
         ? data.USER_AVERAGE_SESSIONS.find(user => user.userId === parseInt(userId))
         : data;
 
-    if (!session) {
-        throw new Error(`Sessions for user with ID ${userId} not found`);
+    console.log('Filtered session:', session); // Vérifier les données filtrées
+
+    if (!session || !session.sessions) {
+        throw new Error(`Sessions for user with ID ${userId} not found or are empty`);
     }
 
     // Créer une instance de UserSession avec toutes les sessions
-    const userSession = new UserSession(session.sessions);
 
-    // Si ton graphique attend un tableau de sessions, retourne simplement userSession.sessions
-    return userSession.sessions;
+    return session.sessions.map(s => new UserSession(s.day, s.sessionLength));
+    // const userSessions = session.sessions.map(s => new UserSession(s));
+    // console.log('UserSessions:', userSessions); // Vérifier les données finales
+
+    // return userSessions;
 }
 
+// // export async function getUserSessions(userId) {
+// //     const data = await fetchData('/average-sessions', userId);
+// //     return isApi ? data.sessions : data.USER_AVERAGE_SESSIONS.find(session => session.userId === parseInt(userId)).sessions;
+// // }
 
-// export async function getUserSessions(userId) {
-//     const data = await fetchData('/average-sessions', userId);
-//     return isApi ? data.sessions : data.USER_AVERAGE_SESSIONS.find(session => session.userId === parseInt(userId)).sessions;
-// }
 
 export async function getUserPerformances(userId) {
     const data = await fetchData('/performance', userId);
@@ -95,3 +99,8 @@ export async function getUserPerformances(userId) {
 //     const data = await fetchData('/performance', userId);
 //     return isApi ? data.data : data.USER_PERFORMANCE.find(performance => performance.userId === parseInt(userId)).data;
 // }
+
+
+
+
+

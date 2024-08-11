@@ -33,17 +33,17 @@ function AverageSessionDurationLineChart({ userId }) {
         getUserSessions(userId).then(userData => setData(userData))
     }, [userId]);
 
-
+    
     // Mappage des numéros de jours aux lettres des jours de la semaine
-    const daysOfWeek = {
-        1: 'L', // Lundi
-        2: 'M', // Mardi
-        3: 'M', // Mercredi
-        4: 'J', // Jeudi
-        5: 'V', // Vendredi
-        6: 'S', // Samedi
-        7: 'D', // Dimanche
-    };
+    // const daysOfWeek = {
+    //     1: 'L', // Lundi
+    //     2: 'M', // Mardi
+    //     3: 'M', // Mercredi
+    //     4: 'J', // Jeudi
+    //     5: 'V', // Vendredi
+    //     6: 'S', // Samedi
+    //     7: 'D', // Dimanche
+    // };
 
     // Tooltip personnalisé
     const CustomTooltip = ({ active, payload }) => { //payload affiche des informations sur les données survolées dans un graphique.
@@ -78,7 +78,6 @@ function AverageSessionDurationLineChart({ userId }) {
                     <CartesianGrid strokeDasharray="3 3" vertical={false} horizontal={false} />
                     <XAxis
                         dataKey="day"
-                        tickFormatter={(value) => daysOfWeek[value]} // Remplace les chiffres par les lettres
                         tick={{ fill: '#FBFBFB' }}
                         tickLine={false} // Supprime les petits traits sur l'axe des abscisses
                         axisLine={false} // Supprime la ligne de l'axe des abscisses

@@ -1,6 +1,7 @@
 import { PieChart, Pie, ResponsiveContainer } from 'recharts';
 import '../../../sass/ScoreDonutChart.scss';
 import PropTypes from 'prop-types';
+import '../../../css/ScoreDonutChart.css';
 
 function ScoreDonutChart({ score }) {
 

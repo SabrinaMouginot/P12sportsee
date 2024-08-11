@@ -1,8 +1,8 @@
 .duree {
-  background-color: #FF0000;
-  color: white;
   border-radius: 5px;
   font-size: 15px;
+  background-color: #FF0000;
+  color: white;
 }
 .duree .title {
   font-size: 15px;

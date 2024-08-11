@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { AreaChart, Area, XAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import PropTypes from 'prop-types';
 import { getUserSessions } from '../../../API/api';
 
@@ -33,7 +33,7 @@ function AverageSessionDurationLineChart({ userId }) {
         getUserSessions(userId).then(userData => setData(userData))
     }, [userId]);
 
-    
+
     // Mappage des numéros de jours aux lettres des jours de la semaine
     // const daysOfWeek = {
     //     1: 'L', // Lundi
@@ -71,9 +71,10 @@ function AverageSessionDurationLineChart({ userId }) {
         <div className="chart-wrapper duree">
             <h2 className="title">Durée moyenne des sessions</h2>
 
-            <ResponsiveContainer width="100%" height={250}>
+            <ResponsiveContainer width="100%" height={263}>
                 <AreaChart
                     data={data}
+                    // margin={{ top: 20, right: 30, left: 0, bottom: 5 }}
                 >
                     <CartesianGrid strokeDasharray="3 3" vertical={false} horizontal={false} />
                     <XAxis
@@ -81,6 +82,10 @@ function AverageSessionDurationLineChart({ userId }) {
                         tick={{ fill: '#FBFBFB' }}
                         tickLine={false} // Supprime les petits traits sur l'axe des abscisses
                         axisLine={false} // Supprime la ligne de l'axe des abscisses
+                    />
+                    <YAxis
+                        domain={[30, 'dataMax + 10']} // Ajuster la plage des valeurs
+                        hide={true} // Cacher l'axe des ordonnées si nécessaire
                     />
                     <Tooltip content={<CustomTooltip />}
                         cursor={<CustomCursor />}

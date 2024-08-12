@@ -83,7 +83,9 @@ function AverageSessionDurationLineChart({ userId }) {
                         stroke="#FBFBFB"
                         strokeWidth={2}
                         fill="url(#colorRed)" // Utilisation d'un dégradé pour remplir l'espace sous la courbe
+                        className='area'
                     />
+
                     <defs>
                         <linearGradient id="colorRed" x1="0" y1="0" x2="0" y2="1">
                             <stop offset="0%" stopColor="#FF0000" stopOpacity={1} />

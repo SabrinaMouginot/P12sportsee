@@ -1,9 +1,12 @@
 @import '../sass/mixins.scss';
 
 .score {
+    @include style-box-charts;
     background-color: #FBFBFB;
     position: relative;
-    @include style-box-charts;
+    display: flex;
+    align-items: center; // Centre horizontalement le graphique
+    justify-content: center; // Centre verticalement le graphique
 
     .title {
         text-align: left;

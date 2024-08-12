@@ -52,14 +52,11 @@ export async function getUserActivities(userId) {
 
 export async function getUserSessions(userId) {
     const data = await fetchData('/average-sessions', userId);
-    console.log('Fetched data:', data); // Vérifier les données brutes reçues
 
     // Trouver les sessions pour l'utilisateur spécifique
     const session = Array.isArray(data.USER_AVERAGE_SESSIONS)
         ? data.USER_AVERAGE_SESSIONS.find(user => user.userId === parseInt(userId))
         : data;
-
-    console.log('Filtered session:', session); // Vérifier les données filtrées
 
     if (!session || !session.sessions) {
         throw new Error(`Sessions for user with ID ${userId} not found or are empty`);

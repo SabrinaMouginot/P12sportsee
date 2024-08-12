@@ -11,7 +11,7 @@ function ScoreDonutChart({ score }) {
         { name: 'Reste', value: 100 - score },
     ];
 
-    const scoreEndAngle = 90 + 360 * score/100; // Calculer l'angle de fin pour l'arc rouge
+    const scoreEndAngle = 90 + 360 * score / 100; // Calculer l'angle de fin pour l'arc rouge
 
     return (
         <div className="chart-wrapper">

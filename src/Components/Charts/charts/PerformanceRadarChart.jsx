@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 import PropTypes from 'prop-types';
 import { getUserPerformances } from '../../../API/api';
-import'../../../css/PerformanceRadarChart.css';
+import '../../../css/PerformanceRadarChart.css';
 
-function PerformanceRadarChart({ userId}) {
+function PerformanceRadarChart({ userId }) {
     const [data, setData] = useState([]);
 
     useEffect(() => {

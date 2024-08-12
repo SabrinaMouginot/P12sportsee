@@ -1,7 +1,6 @@
 import { useParams } from "react-router";
 import { useEffect, useState } from 'react';
 import { getUserData } from "../API/api";
-// import { getUserData, getUserActivities, getUserSessions, getUserPerformances } from "../API/api";
 
 import '../css/Dashbord.css';
 import NotFound from "./NotFound";
@@ -24,15 +23,10 @@ import '../css/ScoreDonutChart.css';
 
 function Dashbord() {
     const { userId } = useParams();
-    //     console.log(userId);
 
     const [data, setData] = useState();
 
     const [error, setError] = useState(null);
-
-    //     useEffect(() => {
-    //         getUserData(userId).then(userData => setData(userData))
-    //     }, [userId]); // Ajout de userId comme dépendance
 
     useEffect(() => {
         async function fetchAllData() {
@@ -46,10 +40,6 @@ function Dashbord() {
 
         fetchAllData();
     }, [userId]);
-
-    //     if (!data) {
-    //         return <NotFound />;
-    //     } else {
 
     if (error) {
         return <NotFound />;

@@ -4,16 +4,11 @@
   background-color: #FF0000;
   color: white;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .duree .title {
   font-size: 15px;
   padding: 10px 20px;
   position: absolute;
-  top: -20px;
-  left: 5%;
   z-index: 10;
 }
 .duree .custom-tooltip {

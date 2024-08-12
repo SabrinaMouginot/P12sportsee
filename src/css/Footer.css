@@ -8,7 +8,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* Footer prend 117px en hauteur */
   padding: 60px;
 }
 .Footer ul {

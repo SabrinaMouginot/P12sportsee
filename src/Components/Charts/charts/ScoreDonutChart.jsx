@@ -8,10 +8,10 @@ function ScoreDonutChart({ score }) {
     // Données pour le graphique en donut
     const data = [
         { name: 'Score', value: score },
-        { name: 'Reste', value: 1 - score },
+        { name: 'Reste', value: 100 - score },
     ];
 
-    const scoreEndAngle = 90 + 360 * score; // Calculer l'angle de fin pour l'arc rouge
+    const scoreEndAngle = 90 + 360 * score/100; // Calculer l'angle de fin pour l'arc rouge
 
     return (
         <div className="chart-wrapper">
@@ -32,7 +32,8 @@ function ScoreDonutChart({ score }) {
 
                     {/* Arc de score (rouge) */}
                     <Pie
-                        data={data}
+                        // data={data}
+                        data={[{ value: 1 }]} // 1 signifie 100% du cercle
                         dataKey="value"
                         innerRadius="70%"
                         outerRadius="80%"
@@ -63,3 +64,56 @@ ScoreDonutChart.propTypes = {
 };
 
 export default ScoreDonutChart;
+
+// import { RadialBarChart, RadialBar, ResponsiveContainer } from 'recharts';
+
+// function ScoreDonutChart({ score }) {
+//     // Données pour le graphique en RadialBar
+//     const data = [{ name: 'Score', value: score * 100 }]; // score en pourcentage
+
+//     return (
+//         <div className="chart-wrapper">
+//             <h2 className="title">Score</h2>
+//             <ResponsiveContainer width="100%" height={250}>
+//                 <RadialBarChart
+//                     cx="50%" 
+//                     cy="50%" 
+//                     innerRadius="70%" 
+//                     outerRadius="80%" 
+//                     barSize={10}
+//                     data={data}
+//                     startAngle={90}
+//                     endAngle={450} // sens antihoraire
+//                     fill= '#FF0000'
+//                 >
+//                     <RadialBar
+//                         dataKey="value"
+//                         cornerRadius={10} // Pour arrondir les extrémités
+//                         clockWise={false} // Sens antihoraire
+//                     />
+//                     {/* Cercle blanc intérieur */}
+//                     <circle cx="50%" cy="50%" r="70" fill="#FFFFFF" />
+//                     {/* Texte au centre */}
+//                     <text
+//                         x="50%"
+//                         y="50%"
+//                         textAnchor="middle"
+//                         dominantBaseline="middle"
+//                         className="score-text"
+//                     >
+//                         {`${score}%`} {/* Affichage du score en pourcentage */}
+//                         <tspan x="50%" dy="1.2em" className="score-subtext">
+//                             de votre objectif
+//                         </tspan>
+//                     </text>
+//                 </RadialBarChart>
+//             </ResponsiveContainer>
+//         </div>
+//     );
+// }
+
+// ScoreDonutChart.propTypes = {
+//     score: PropTypes.number.isRequired,
+// };
+
+// export default ScoreDonutChart;

@@ -33,18 +33,6 @@ function AverageSessionDurationLineChart({ userId }) {
         getUserSessions(userId).then(userData => setData(userData))
     }, [userId]);
 
-
-    // Mappage des numéros de jours aux lettres des jours de la semaine
-    // const daysOfWeek = {
-    //     1: 'L', // Lundi
-    //     2: 'M', // Mardi
-    //     3: 'M', // Mercredi
-    //     4: 'J', // Jeudi
-    //     5: 'V', // Vendredi
-    //     6: 'S', // Samedi
-    //     7: 'D', // Dimanche
-    // };
-
     // Tooltip personnalisé
     const CustomTooltip = ({ active, payload }) => { //payload affiche des informations sur les données survolées dans un graphique.
         if (active && payload && payload.length) {
@@ -71,10 +59,9 @@ function AverageSessionDurationLineChart({ userId }) {
         <div className="chart-wrapper duree">
             <h2 className="title">Durée moyenne des sessions</h2>
 
-            <ResponsiveContainer width="100%" height={263}>
-                <AreaChart
+            <ResponsiveContainer width="100%">
+                {data.length && <AreaChart
                     data={data}
-                    // margin={{ top: 20, right: 30, left: 0, bottom: 5 }}
                 >
                     <CartesianGrid strokeDasharray="3 3" vertical={false} horizontal={false} />
                     <XAxis
@@ -103,7 +90,7 @@ function AverageSessionDurationLineChart({ userId }) {
                             <stop offset="100%" stopColor="rgba(255, 255, 255, 0.11)" stopOpacity={0.1} />
                         </linearGradient>
                     </defs>
-                </AreaChart>
+                </AreaChart>}
             </ResponsiveContainer>
         </div>
     );

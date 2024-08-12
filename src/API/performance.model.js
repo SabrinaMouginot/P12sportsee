@@ -1,6 +1,6 @@
 export class UserPerformance {
     // Mappage des indices aux libellés personnalisés
-    static performanceLabels = {
+    static performanceLabels = { //static permet d'accéder à la propriété directement via la classe.
         1: 'Intensité',
         2: 'Vitesse',
         3: 'Force',

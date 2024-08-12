@@ -11,8 +11,8 @@ function CustomCursor({ points, width, height }) {
             y={0} // Le rectangle commence en haut du graphique
             width={width - x} // Le rectangle couvre toute la largeur à partir du point actif jusqu'au bord droit
             height={height} // Le rectangle couvre toute la hauteur du graphique
-            fill="#000" // Couleur de fond
-            opacity={0.0975} // Opacité appliquée
+            fill="#000"
+            opacity={0.0975}
         />
     );
 }
@@ -22,8 +22,8 @@ CustomCursor.propTypes = {
         x: PropTypes.number.isRequired,
         y: PropTypes.number.isRequired,
     })),
-    width: PropTypes.number.isRequired,
-    height: PropTypes.number.isRequired,
+    width: PropTypes.number, // Suppression de `isRequired`
+    height: PropTypes.number, // Suppression de `isRequired`
 };
 
 function AverageSessionDurationLineChart({ userId }) {

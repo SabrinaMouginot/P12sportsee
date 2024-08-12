@@ -45,6 +45,7 @@
   flex: 1 1 calc(33.33% - 10px);
   max-width: 258px;
   height: 34vh;
+  min-height: 200px;
   max-height: 263px;
 }
 .dashbord .container .grid-container .bottom-row .item p {

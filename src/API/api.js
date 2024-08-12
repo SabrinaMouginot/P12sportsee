@@ -1,7 +1,10 @@
 import axios from 'axios';
-import { UserData, UserActivity, UserSession, UserPerformance } from './user.model';
+import { UserData } from './user.model';
+import { UserActivity } from './activity.model';
+import { UserSession } from './session.model';
+import { UserPerformance } from './performance.model';
 
-const isApi = false;
+const isApi = true;
 
 async function fetchData(endpoint, userId) {
     const url = isApi ? `http://localhost:3000/user/${userId}${endpoint}` : '/userData.json';
@@ -48,7 +51,7 @@ export async function getUserActivities(userId) {
 
 
 export async function getUserSessions(userId) {
-    const data = await fetchData('/sessions', userId);
+    const data = await fetchData('/average-sessions', userId);
     console.log('Fetched data:', data); // Vérifier les données brutes reçues
 
     // Trouver les sessions pour l'utilisateur spécifique
@@ -65,17 +68,7 @@ export async function getUserSessions(userId) {
     // Créer une instance de UserSession avec toutes les sessions
 
     return session.sessions.map(s => new UserSession(s.day, s.sessionLength));
-    // const userSessions = session.sessions.map(s => new UserSession(s));
-    // console.log('UserSessions:', userSessions); // Vérifier les données finales
-
-    // return userSessions;
 }
-
-// // export async function getUserSessions(userId) {
-// //     const data = await fetchData('/average-sessions', userId);
-// //     return isApi ? data.sessions : data.USER_AVERAGE_SESSIONS.find(session => session.userId === parseInt(userId)).sessions;
-// // }
-
 
 export async function getUserPerformances(userId) {
     const data = await fetchData('/performance', userId);
@@ -93,14 +86,3 @@ export async function getUserPerformances(userId) {
 
     return userPerformance.performance; // Retourner le tableau des performances
 }
-
-
-// export async function getUserPerformances(userId) {
-//     const data = await fetchData('/performance', userId);
-//     return isApi ? data.data : data.USER_PERFORMANCE.find(performance => performance.userId === parseInt(userId)).data;
-// }
-
-
-
-
-

@@ -16,7 +16,7 @@ function ScoreDonutChart({ score }) {
     return (
         <div className="chart-wrapper">
             <h2 className="title">Score</h2>
-            <ResponsiveContainer width="100%" height={250}>
+            <ResponsiveContainer width="100%">
                 <PieChart>
                     {/* Cercle blanc */}
                     <Pie
@@ -64,56 +64,3 @@ ScoreDonutChart.propTypes = {
 };
 
 export default ScoreDonutChart;
-
-// import { RadialBarChart, RadialBar, ResponsiveContainer } from 'recharts';
-
-// function ScoreDonutChart({ score }) {
-//     // Données pour le graphique en RadialBar
-//     const data = [{ name: 'Score', value: score * 100 }]; // score en pourcentage
-
-//     return (
-//         <div className="chart-wrapper">
-//             <h2 className="title">Score</h2>
-//             <ResponsiveContainer width="100%" height={250}>
-//                 <RadialBarChart
-//                     cx="50%" 
-//                     cy="50%" 
-//                     innerRadius="70%" 
-//                     outerRadius="80%" 
-//                     barSize={10}
-//                     data={data}
-//                     startAngle={90}
-//                     endAngle={450} // sens antihoraire
-//                     fill= '#FF0000'
-//                 >
-//                     <RadialBar
-//                         dataKey="value"
-//                         cornerRadius={10} // Pour arrondir les extrémités
-//                         clockWise={false} // Sens antihoraire
-//                     />
-//                     {/* Cercle blanc intérieur */}
-//                     <circle cx="50%" cy="50%" r="70" fill="#FFFFFF" />
-//                     {/* Texte au centre */}
-//                     <text
-//                         x="50%"
-//                         y="50%"
-//                         textAnchor="middle"
-//                         dominantBaseline="middle"
-//                         className="score-text"
-//                     >
-//                         {`${score}%`} {/* Affichage du score en pourcentage */}
-//                         <tspan x="50%" dy="1.2em" className="score-subtext">
-//                             de votre objectif
-//                         </tspan>
-//                     </text>
-//                 </RadialBarChart>
-//             </ResponsiveContainer>
-//         </div>
-//     );
-// }
-
-// ScoreDonutChart.propTypes = {
-//     score: PropTypes.number.isRequired,
-// };
-
-// export default ScoreDonutChart;

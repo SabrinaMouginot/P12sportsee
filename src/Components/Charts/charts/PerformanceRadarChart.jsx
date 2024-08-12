@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 import PropTypes from 'prop-types';
 import { getUserPerformances } from '../../../API/api';
-// import { UserPerformance } from '../../../API/user.model';
 import'../../../css/PerformanceRadarChart.css';
 
 function PerformanceRadarChart({ userId}) {
@@ -11,20 +10,10 @@ function PerformanceRadarChart({ userId}) {
     useEffect(() => {
         getUserPerformances(userId).then(userData => setData(userData));
     }, [userId]);
-    
-    // // Libellés personnalisés
-    // const labels = [
-    //     'Intensité',
-    //     'Vitesse',
-    //     'Force',
-    //     'Endurance',
-    //     'Energie',
-    //     'Cardio'
-    // ];
 
     return (
         <div className="chart-wrapper perf">
-            <ResponsiveContainer width="95%" height="95%">
+            <ResponsiveContainer width="95%">
                 <RadarChart data={data} margin={{ top: 20, right: 30, bottom: 20, left: 30 }}>
                     <PolarGrid />
                     <PolarAngleAxis

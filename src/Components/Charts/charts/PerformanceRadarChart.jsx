@@ -17,7 +17,7 @@ function PerformanceRadarChart({ userId }) {
                 <RadarChart data={data} margin={{ top: 20, right: 30, bottom: 20, left: 30 }}>
                     <PolarGrid />
                     <PolarAngleAxis
-                        dataKey="type" // Utilisez le dataKey pour récupérer les libellés personnalisés
+                        dataKey="type" // Utiliser le dataKey pour récupérer les libellés personnalisés
                         tick={{ fill: '#FFFFFF', fontSize: 12 }} // Couleur et taille des labels
                     />
                     <Radar dataKey="value" fill="rgba(255, 1, 1, 0.70)" />

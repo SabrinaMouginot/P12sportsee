@@ -45,7 +45,7 @@ export async function getUserActivities(userId) {
     // Créer une instance de UserActivity avec toutes les sessions
     const userActivity = new UserActivity(activity.sessions);
 
-    // Si ton graphique attend un tableau de sessions, retourne simplement userActivity.sessions
+    // Si le graphique attend un tableau de sessions, retourne simplement userActivity.sessions
     return userActivity.sessions;
 }
 
